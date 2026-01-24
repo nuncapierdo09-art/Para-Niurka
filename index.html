@@ -4,7 +4,24 @@
   <meta charset="UTF-8">
   <title>Para ti ❤️</title>
   <style>
-    body {
+   <audio id="music" loop>
+  <source src="teamop.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("music");
+  music.volume = 0.5;
+
+  function startMusic() {
+    music.play();
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  }
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("touchstart", startMusic);
+</script>
+ body {
       margin: 0;
       padding: 20px;
       font-family: Arial, sans-serif;
@@ -162,5 +179,7 @@ Vuelve porque sin ti no soy completo, Tuyo.
     <div class="heart" style="--x: -100px; --y: -80px; top: 20px; left: 30%;">❤️</div>
     <div class="heart" style="--x: 120px; --y: 60px; top: 60px; left: 60%;">❤️</div>
     <div class="heart" style="--x: -60px; --y: 120px; top: 100px; left: 40%;">❤
+     
+
 
 
