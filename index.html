@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -9,12 +9,12 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Georgia', serif;
-  background: radial-gradient(circle at top, #2b1055, #000);
+  background: radial-gradient(circle at top, #3a1c71, #000);
   overflow: hidden;
   color: #fff;
 }
 
-/* 🌌 Fondo de corazones */
+/* Fondo */
 .background {
   position: fixed;
   inset: 0;
@@ -22,19 +22,25 @@ body {
   overflow: hidden;
 }
 
+/* Corazones */
 .bg-heart {
   position: absolute;
   color: rgba(255, 120, 180, 0.35);
-  font-size: 20px;
   animation: floatUp linear infinite;
 }
 
 @keyframes floatUp {
-  from { transform: translateY(110vh); opacity: 0; }
-  to { transform: translateY(-10vh); opacity: 1; }
+  from {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
 }
 
-/* 💌 Contenedor */
+/* Contenedor */
 .container {
   position: relative;
   z-index: 1;
@@ -46,7 +52,7 @@ body {
   border-radius: 20px;
   padding: 40px;
   overflow-y: auto;
-  box-shadow: 0 0 40px rgba(255, 105, 180, 0.3);
+  box-shadow: 0 0 40px rgba(255, 105, 180, 0.4);
 }
 
 h1 {
@@ -58,11 +64,11 @@ h1 {
 
 .page {
   display: none;
-  animation: fade 0.6s ease;
 }
 
 .page.active {
   display: block;
+  animation: fade 0.6s ease;
 }
 
 @keyframes fade {
@@ -76,7 +82,7 @@ p {
   white-space: pre-line;
 }
 
-/* 👉 Botón siguiente */
+/* Botones */
 .next-btn {
   display: block;
   margin: 40px auto 0;
@@ -94,7 +100,7 @@ p {
   transform: scale(1.05);
 }
 
-/* 🎵 Música */
+/* Música */
 .music-btn {
   position: fixed;
   bottom: 20px;
@@ -118,56 +124,49 @@ p {
 
 <div class="container">
 
-  <!-- 📄 PÁGINA 1 -->
+  <!-- PÁGINA 1 -->
   <div class="page active" id="page1">
     <h1>Para Niurka, con todo mi corazón ❤️</h1>
     <p>
-A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa sin darme cuenta. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo ruido, a veces llega despacio y se queda. Y tú te quedaste. Por eso puedo decir, sin exagerar, que has sido el mejor amor que he tenido en mi vida
+A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo pq si, a veces llega de la nada y se queda.  sin exagerar has sido el mejor amor que he tenido en mi vida
 
-Me gusta tu mirada. Me gusta cuando brilla y también cuando se apaga un poco. Cuando estás feliz y cuando estás cansada. Hay algo en tus ojos que me desarma, algo que no sé explicar bien, pero que siempre quiero volver a encontrar. La magia que vive ahí no se pierde, yo la persigo, la espero, la recibo. Siempre.
+Me gusta tu mirada. Hay algo en tus ojos que me enamora, algo que no sé explicar bien, pero que siempre quiero volver a ver.
 
-Me gusta todo de ti. Incluso eso que tú no ves bonito. Eso que llamas defectos, complejos, inseguridades. A mí me gustan porque hablan de quién eres, de lo que has vivido, de lo fuerte que has tenido que ser. Yo no quiero cambiarte ni corregirte. Yo te amo tal como eres, sin quitarte nada, sin pedirte que seas otra.
+Me gusta todo de ti. Incluso eso que tú no ves bonito. Eso que llamas defectos, complejos, inseguridades. A mí me gustan porque hablan de quién eres, de lo que has vivido de lo fuerte que has tenido que ser. Yo no quiero cambiarte ni corregirte. Yo te amo tal como eres, sin quitarte nada y sin pedirte que seas otra.
 
-Hay momentos en los que no hacemos nada especial, y aun así se sienten importantes. Caminar juntos, mirarnos en silencio, compartir el cansancio del día. Contigo entendí que el amor también vive ahí, en lo simple, en lo cotidiano, en lo que no necesita explicación.
+Hay momentos en los que no hacemos nada especial, y aun así se sienten importantes. Caminar juntos, mirarnos en silencio, compartir el cansancio del día. Contigo entendí que el amor también vive ahí en lo simple, en lo que no necesita explicación.
 
 Después de un beso siempre quiero otro. No porque no sea suficiente, sino porque contigo nunca quiero detenerme. Cada beso tuyo tiene algo que me calma y algo que me enciende. Es como si el tiempo se quedara quieto solo para nosotros. Y cuando termina, ya estoy esperando el siguiente.
 
-No necesito promesas grandes ni palabras bonitas todo el tiempo. Me basta con tu presencia, con tu forma de querer, con la manera en la que te quedas incluso cuando las cosas no son fáciles. Me basta con saber que estás, que eres tú.
+No necesito promesas grandes ni palabras bonitas todo el tiempo. Me basta con tu presencia y con tu forma de querer, con la manera en la que te quedas incluso cuando las cosas no son fáciles. Me basta con saber que eres tú.
 
-Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun así decidí quedarme. Te vi con miedos, con dudas, con heridas, y aun así te elegí. Porque en todo eso también hay belleza, y yo sí la veo.
+Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun así decidí quedarme. Te vi con miedos, con tus dudas, con heridas, y aun así te elegí. Porque en todo eso también hay belleza, y yo sí la veo.
 
-Amarte no se siente como obligación, se siente como decisión. Como elegirte todos los días, incluso en los silencios, incluso en los momentos donde no sabemos qué decir. Se siente como hogar.
-
-No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo de una forma tranquila, profunda, sincera. Sin disfraces, sin exageraciones. Te amo porque eres tú, porque no necesitas ser perfecta para ser suficiente.
-
-Y mientras exista esa magia en tu mirada, yo seguiré aquí. Persiguiéndola, recibiéndola, cuidándola.
-Contigo.
+No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente.
     </p>
-
     <button class="next-btn" onclick="goNext()">Siguiente ➜</button>
   </div>
 
-  <!-- 📄 PÁGINA 2 -->
+  <!-- PÁGINA 2 -->
   <div class="page" id="page2">
-    <h1>Te amo mucho❤️</h1>
+    <h1>Te amo mucho ❤️</h1>
     <p>
 Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
 Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
 Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
       ´´antes de tocar tus labios quiero tocar tu corazón y antes de conquistar tu cuerpo quiero conquistar tu amor ♥´´
     </p>
-
     <button class="next-btn" onclick="goBack()">⬅ Volver</button>
   </div>
 
 </div>
 
-<!-- 🎵 Música -->
+<!-- Música -->
 <audio id="music"></audio>
 <button class="music-btn" id="musicBtn">🎵 Encender música</button>
 
 <script>
-/* 🎵 Música */
+/* Música */
 const playlist = ["teamop.mp3", "teamopfinal.mp3"];
 let index = 0;
 const music = document.getElementById("music");
@@ -186,7 +185,7 @@ music.addEventListener("ended", () => {
   }
 });
 
-/* 📄 Cambio de páginas */
+/* Cambio de páginas */
 function goNext() {
   document.getElementById("page1").classList.remove("active");
   document.getElementById("page2").classList.add("active");
@@ -197,7 +196,7 @@ function goBack() {
   document.getElementById("page1").classList.add("active");
 }
 
-/* 💖 Corazones */
+/* Corazones */
 const bg = document.getElementById("background");
 
 function createHeart() {
@@ -205,6 +204,19 @@ function createHeart() {
   heart.className = "bg-heart";
   heart.innerHTML = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (12 + Math.random() * 20) + "px";
-  heart.style.animationDuration = (6 + M
+  heart.style.fontSize = (12 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+  bg.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 12000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
+
+
+
 
