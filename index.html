@@ -148,6 +148,7 @@ p {
 
 <!-- CARTA -->
 <div id="cover">
+  Calgary
   <div class="envelope" onclick="openLetter()">
     <div class="heart">❤️</div>
   </div>
@@ -176,21 +177,21 @@ No necesito promesas grandes ni palabras bonitas todo el tiempo. Me basta con tu
 
 Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun así decidí quedarme. Te vi con miedos, con tus dudas, con heridas, y aun así te elegí. Porque en todo eso también hay belleza, y yo sí la veo.
 
-No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente.
+No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente. 
       </p>
       <button class="next-btn" onclick="goNext()">Siguiente ➜</button>
     </div>
 
     <div class="page" id="page2">
-      <h1>Te amo mucho Niurka.❤️</h1>
-      <p> Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
+      <h1>Te amo mucho Niurka ❤️</h1>
+      <p>
+Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
 Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
 Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
       ´´antes de tocar tus labios quiero tocar tu corazón y antes de conquistar tu cuerpo quiero conquistar tu amor ♥´´  .
 
      <h1>  Sabes, aveces pienso que decirte teamo no basta, porque...</h1>
                                           Un te amo
-
 No es suficiente para expresar todo el amor que tengo hacia ti,podría escribir miles de poemas y libros y aún asi no podría decirte ni la mitad de eso,te amo tanto,y no lo digo solo porque suene bonito cuando te digo que te amo me refiero a que te amo por encima de todo,te amo aunque hayan miles de problemas,te amor a pesar de que todavía somos muy jóvenes,te amo aunque el mundo se ponga en nuestra contra.🫶❤️💞🙈
 Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo..
       </p>
@@ -207,8 +208,14 @@ Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que 
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 
-/* 🎵 Música */
-const playlist = ["teamop.mp3", "teamopfinal.mp3"];
+/* 🎵 PLAYLIST COMPLETA */
+const playlist = [
+  "teamop.mp3",
+  "teamopfinal.mp3",
+  "teamopfinal2.mp3",
+  "teamopfinal3.mp3"
+];
+
 let index = 0;
 const music = document.getElementById("music");
 music.volume = 0.4;
@@ -218,18 +225,18 @@ function playMusic() {
   music.play();
 }
 
+/* ▶️ Cambia sola cuando termina */
 music.addEventListener("ended", () => {
   index++;
-  if (index < playlist.length) {
-    music.src = playlist[index];
-    music.play();
-  }
+  if (index >= playlist.length) index = 0;
+  music.src = playlist[index];
+  music.play();
 });
 
 /* 💌 Abrir carta + música automática */
 function openLetter() {
   document.querySelector(".envelope").classList.add("open");
-  playMusic(); // 🔥 aquí empieza la música
+  playMusic();
 
   setTimeout(() => {
     document.getElementById("cover").style.display = "none";
