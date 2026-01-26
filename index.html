@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -9,20 +9,84 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Georgia', serif;
-  background: radial-gradient(circle at top, #3a1c71, #000);
   overflow: hidden;
   color: #fff;
 }
 
-/* Fondo */
+/* ===================== */
+/* 💌 PANTALLA CARTA */
+/* ===================== */
+#cover {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(#ffd1dc, #ffb6c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.envelope {
+  width: 260px;
+  height: 180px;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  animation: pulse 2s infinite;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 50%, #f5f5f5 50%);
+  border-radius: 10px;
+}
+
+.heart {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.open {
+  animation: open 1s forwards;
+}
+
+@keyframes open {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* ===================== */
+/* 🌌 CONTENIDO PRINCIPAL */
+/* ===================== */
+#main {
+  display: none;
+  height: 100vh;
+  background: radial-gradient(circle at top, #3a1c71, #000);
+  overflow: hidden;
+}
+
+/* Fondo corazones */
 .background {
   position: fixed;
   inset: 0;
   z-index: 0;
-  overflow: hidden;
 }
 
-/* Corazones */
 .bg-heart {
   position: absolute;
   color: rgba(255, 120, 180, 0.35);
@@ -30,14 +94,8 @@ body {
 }
 
 @keyframes floatUp {
-  from {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-10vh);
-    opacity: 1;
-  }
+  from { transform: translateY(110vh); opacity: 0; }
+  to { transform: translateY(-10vh); opacity: 1; }
 }
 
 /* Contenedor */
@@ -47,34 +105,22 @@ body {
   max-width: 900px;
   height: 85vh;
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 40px;
   overflow-y: auto;
-  box-shadow: 0 0 40px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 0 40px rgba(255,105,180,.4);
 }
 
 h1 {
   text-align: center;
   color: #ff9acb;
   font-size: 3rem;
-  margin-bottom: 30px;
 }
 
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-  animation: fade 0.6s ease;
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+.page { display: none; }
+.page.active { display: block; }
 
 p {
   font-size: 1.2rem;
@@ -82,22 +128,15 @@ p {
   white-space: pre-line;
 }
 
-/* Botones */
 .next-btn {
   display: block;
-  margin: 40px auto 0;
+  margin: 40px auto;
   background: #ff5fa2;
-  color: white;
   border: none;
   border-radius: 50px;
   padding: 14px 30px;
-  font-size: 16px;
+  color: #fff;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 95, 162, 0.7);
-}
-
-.next-btn:hover {
-  transform: scale(1.05);
 }
 
 /* Música */
@@ -106,13 +145,11 @@ p {
   bottom: 20px;
   right: 20px;
   background: #ff5fa2;
-  color: white;
   border: none;
   border-radius: 50px;
   padding: 14px 22px;
-  font-size: 16px;
+  color: white;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 95, 162, 0.7);
   z-index: 2;
 }
 </style>
@@ -120,14 +157,22 @@ p {
 
 <body>
 
-<div class="background" id="background"></div>
+<!-- 💌 CARTA -->
+<div id="cover">
+  <div class="envelope" onclick="openLetter()">
+    <div class="heart">❤️</div>
+  </div>
+</div>
 
-<div class="container">
+<!-- 🌌 CONTENIDO -->
+<div id="main">
+  <div class="background" id="background"></div>
 
-  <!-- PÁGINA 1 -->
-  <div class="page active" id="page1">
-    <h1>Para Niurka, con todo mi corazón ❤️</h1>
-    <p>
+  <div class="container">
+
+    <div class="page active" id="page1">
+      <h1>Para mi Niurka ❤️</h1>
+      <p>
 A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo pq si, a veces llega de la nada y se queda.  sin exagerar has sido el mejor amor que he tenido en mi vida
 
 Me gusta tu mirada. Hay algo en tus ojos que me enamora, algo que no sé explicar bien, pero que siempre quiero volver a ver.
@@ -142,15 +187,15 @@ No necesito promesas grandes ni palabras bonitas todo el tiempo. Me basta con tu
 
 Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun así decidí quedarme. Te vi con miedos, con tus dudas, con heridas, y aun así te elegí. Porque en todo eso también hay belleza, y yo sí la veo.
 
-No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente.
-    </p>
-    <button class="next-btn" onclick="goNext()">Siguiente ➜</button>
-  </div>
+No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente. 
 
-  <!-- PÁGINA 2 -->
-  <div class="page" id="page2">
-    <h1>Te amo mucho ❤️</h1>
-    <p>
+      </p>
+      <button class="next-btn" onclick="goNext()">Siguiente ➜</button>
+    </div>
+
+    <div class="page" id="page2">
+      <h1>Te amo mucho ❤️</h1>
+      <p>
 Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
 Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
 Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
@@ -160,28 +205,37 @@ Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasand
                                           Un te amo
 
 No es suficiente para expresar todo el amor que tengo hacia ti,podría escribir miles de poemas y libros y aún asi no podría decirte ni la mitad de eso,te amo tanto,y no lo digo solo porque suene bonito cuando te digo que te amo me refiero a que te amo por encima de todo,te amo aunque hayan miles de problemas,te amor a pesar de que todavía somos muy jóvenes,te amo aunque el mundo se ponga en nuestra contra.🫶❤️💞🙈
-Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo...
-    </p>
-    <button class="next-btn" onclick="goBack()">⬅ Volver</button>
+Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo
+      </p>
+      <button class="next-btn" onclick="goBack()">⬅ Volver</button>
+    </div>
+
   </div>
 
+  <audio id="music"></audio>
+  <button class="music-btn" onclick="playMusic()">🎵 Música</button>
 </div>
 
-<!-- Música -->
-<audio id="music"></audio>
-<button class="music-btn" id="musicBtn">🎵 Encender música</button>
-
 <script>
+/* Abrir carta */
+function openLetter() {
+  document.querySelector(".envelope").classList.add("open");
+  setTimeout(() => {
+    document.getElementById("cover").style.display = "none";
+    document.getElementById("main").style.display = "block";
+  }, 800);
+}
+
 /* Música */
 const playlist = ["teamop.mp3", "teamopfinal.mp3"];
 let index = 0;
 const music = document.getElementById("music");
 music.volume = 0.4;
-music.src = playlist[index];
 
-document.getElementById("musicBtn").addEventListener("click", () => {
+function playMusic() {
+  music.src = playlist[index];
   music.play();
-});
+}
 
 music.addEventListener("ended", () => {
   index++;
@@ -191,33 +245,30 @@ music.addEventListener("ended", () => {
   }
 });
 
-/* Cambio de páginas */
+/* Páginas */
 function goNext() {
-  document.getElementById("page1").classList.remove("active");
-  document.getElementById("page2").classList.add("active");
+  page1.classList.remove("active");
+  page2.classList.add("active");
 }
 
 function goBack() {
-  document.getElementById("page2").classList.remove("active");
-  document.getElementById("page1").classList.add("active");
+  page2.classList.remove("active");
+  page1.classList.add("active");
 }
 
 /* Corazones */
 const bg = document.getElementById("background");
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "bg-heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (12 + Math.random() * 25) + "px";
-  heart.style.animationDuration = (6 + Math.random() * 6) + "s";
-  bg.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 12000);
-}
-
-setInterval(createHeart, 300);
+setInterval(() => {
+  const h = document.createElement("div");
+  h.className = "bg-heart";
+  h.innerHTML = "❤️";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.fontSize = (12 + Math.random()*25) + "px";
+  h.style.animationDuration = (6 + Math.random()*6) + "s";
+  bg.appendChild(h);
+  setTimeout(() => h.remove(), 12000);
+}, 300);
 </script>
 
 </body>
