@@ -15,7 +15,7 @@ body{
   color:#fff;
   background:linear-gradient(270deg,#6a0dad,#b983ff,#ffafcc,#ff5fa2);
   background-size:600% 600%;
-  animation:bg 16s ease infinite;
+  animation:bg 18s ease infinite;
 }
 
 @keyframes bg{
@@ -28,14 +28,14 @@ body{
 #intro{
   position:fixed;
   inset:0;
-  background:black;
+  background:#000;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   font-size:2rem;
   padding:30px;
-  z-index:20;
+  z-index:30;
   animation:introOut 3s forwards;
   animation-delay:4s;
 }
@@ -51,7 +51,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:10;
+  z-index:20;
 }
 
 .envelope{
@@ -95,10 +95,7 @@ body{
 }
 
 /* CONTENIDO */
-#main{
-  display:none;
-  height:100vh;
-}
+#main{display:none;height:100vh}
 
 .background{
   position:fixed;
@@ -138,11 +135,7 @@ p{
   font-size:1.2rem;
   line-height:1.9;
   white-space:pre-line;
-}
-
-.lines{
-  color:#fff;
-  opacity:.85;
+  min-height:300px;
 }
 
 .next-btn{
@@ -156,28 +149,48 @@ p{
   cursor:pointer;
 }
 
-/* POP FRASES */
-.love-pop{
-  position:fixed;
-  font-size:22px;
-  animation:pop 2s forwards;
+/* FINAL SAN VALENTIN */
+.final{
+  text-align:center;
 }
 
-@keyframes pop{
-  to{opacity:0;transform:translateY(-80px)}
-}
-
-/* OPCIONES */
-.options button{
-  display:block;
-  margin:15px auto;
-  padding:12px 30px;
-  border:none;
-  border-radius:40px;
-  background:#ff9acb;
+.final h1{
+  font-size:3.5rem;
   color:#fff;
-  font-size:1.1rem;
+}
+
+.big-heart{
+  font-size:80px;
+  animation:beat 1.2s infinite;
+}
+
+@keyframes beat{
+  50%{transform:scale(1.2)}
+}
+
+.arrow{
+  font-size:60px;
+  animation:arrow 2s infinite;
+}
+
+@keyframes arrow{
+  0%{transform:translateX(-40px)}
+  50%{transform:translateX(40px)}
+  100%{transform:translateX(-40px)}
+}
+
+/* MUSICA */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:14px 22px;
+  border:none;
+  border-radius:50px;
+  background:#ff5fa2;
+  color:white;
   cursor:pointer;
+  z-index:5;
 }
 </style>
 </head>
@@ -200,9 +213,76 @@ p{
 
   <div class="container">
 
+    <!-- PAGINA 1 -->
     <div class="page active">
       <h1>Para ti ❤️</h1>
-      <p class="lines">
+      <p id="t1"></p>
+      <button class="next-btn" onclick="next()">Siguiente</button>
+    </div>
+
+    <!-- PAGINA 2 -->
+    <div class="page">
+      <p id="t2"></p>
+      <button class="next-btn" onclick="next()">Siguiente</button>
+    </div>
+
+    <!-- PAGINA 3 -->
+    <div class="page">
+      <p id="t3"></p>
+      <button class="next-btn" onclick="next()">Siguiente</button>
+    </div>
+
+    <!-- PAGINA 4 -->
+    <div class="page">
+      <p id="t4"></p>
+      <button class="next-btn" onclick="next()">Siguiente</button>
+    </div>
+
+    <!-- PAGINA FINAL -->
+    <div class="page final">
+      <h1>¿Quieres ser mi<br>San Valentín?</h1>
+      <div class="big-heart">❤️❤️❤️</div>
+      <div class="arrow">🏹❤️</div>
+      <button class="next-btn">Sí, acepto 💖</button>
+      <button class="next-btn">Sí, mi amor 💕</button>
+      <button class="next-btn">Sí, te amo ❤️</button>
+      <button class="next-btn">Sí 🌹</button>
+    </div>
+
+  </div>
+
+  <audio id="music"></audio>
+  <button class="music-btn" onclick="playMusic()">🎵 Música</button>
+</div>
+
+<script>
+/* MUSICA */
+const playlist=[
+  "teamop.mp3",
+  "teamopfinal.mp3",
+   "nadiemas.mp3",
+  "teamopfinal2.mp3",
+ "teamopfinal3.mp3",
+  "teamopfinal34.mp3",
+  
+];
+let mi=0;
+const music=document.getElementById("music");
+music.volume=0.4;
+
+function playMusic(){
+  if(!music.src) music.src=playlist[mi];
+  music.play();
+}
+
+music.addEventListener("ended",()=>{
+  mi=(mi+1)%playlist.length;
+  music.src=playlist[mi];
+  music.play();
+});
+
+/* TEXTO */
+const textos=[
 A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo pq si, a veces llega de la nada y se queda.  sin exagerar has sido el mejor amor que he tenido en mi vida
 
 Me gusta tu mirada. Hay algo en tus ojos que me enamora, algo que no sé explicar bien, pero que siempre quiero volver a ver.
@@ -219,113 +299,75 @@ Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun a
 
 No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente.
 
-      </p>
-      <button class="next-btn" onclick="nextPage()">Siguiente</button>
-    </div>
-
-    <div class="page">
-      <p class="lines">
-ueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
+---`,
+`-ueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
 Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
 Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
       ´´antes de tocar tus labios quiero tocar tu corazón y antes de conquistar tu cuerpo quiero conquistar tu amor ♥´´
   <h1>  Sabes, aveces pienso que decirte teamo no basta, porque...</h1>
                                           Un te amo
 No es suficiente para expresar todo el amor que tengo hacia ti,podría escribir miles de poemas y libros y aún asi no podría decirte ni la mitad de eso,te amo tanto,y no lo digo solo porque suene bonito cuando te digo que te amo me refiero a que te amo por encima de todo,te amo aunque hayan miles de problemas,te amor a pesar de que todavía somos muy jóvenes,te amo aunque el mundo se ponga en nuestra contra.🫶❤️💞🙈
-Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo..
-      </p>
-      <button class="next-btn" onclick="nextPage()">Siguiente</button>
-    </div>
+Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo..-`,
+`---
+---
+---
+---
+---`,
+`---
+---
+---
+---
+---`
+];
 
-    <div class="page">
-      <p class="lines">
----
----
----
----
----
-      </p>
-      <button class="next-btn" onclick="nextPage()">Siguiente</button>
-    </div>
-
-    <div class="page">
-      <p class="lines">
----
----
----
----
----
-      </p>
-      <button class="next-btn" onclick="nextPage()">Siguiente</button>
-    </div>
-
-    <div class="page">
-      <h1>¿Quieres ser mi San Valentín? ❤️</h1>
-      <div class="options">
-        <button>Si, acepto 💖</button>
-        <button>Si, mi amor 💕</button>
-        <button>Si, te amo ❤️</button>
-        <button>Sí 🌹</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<script>
 let pages=document.querySelectorAll(".page");
-let current=0;
+let cur=0;
 
+function escribir(el,text){
+  el.innerHTML="";
+  let i=0;
+  let speed=45;
+  let it=setInterval(()=>{
+    el.innerHTML+=text.charAt(i);
+    i++;
+    if(i>=text.length) clearInterval(it);
+  },speed);
+}
+
+escribir(t1,textos[0]);
+
+function next(){
+  pages[cur].classList.remove("active");
+  cur++;
+  pages[cur].classList.add("active");
+  if(cur<4) escribir(document.getElementById("t"+(cur+1)),textos[cur]);
+}
+
+/* ABRIR */
 function openLetter(){
   document.querySelector(".envelope").classList.add("open");
+  playMusic();
   setTimeout(()=>{
-    document.getElementById("cover").style.display="none";
-    document.getElementById("main").style.display="block";
+    cover.style.display="none";
+    main.style.display="block";
   },900);
 }
 
-function nextPage(){
-  pages[current].classList.remove("active");
-  current++;
-  pages[current].classList.add("active");
-}
-
-/* corazones */
-const bg=document.getElementById("background");
+/* CORAZONES */
 setInterval(()=>{
   const h=document.createElement("div");
   h.className="bg-heart";
   h.innerHTML="❤️";
   h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(14+Math.random()*30)+"px";
+  h.style.fontSize=(14+Math.random()*28)+"px";
   h.style.animationDuration=(6+Math.random()*6)+"s";
-  bg.appendChild(h);
+  background.appendChild(h);
   setTimeout(()=>h.remove(),12000);
-},350);
-
-/* frases al tocar */
-const frases=[
-  "Te amo Niurka ❤️",
-  "Eres la mejor 💖",
-  "Siempre tú",
-  "Mi lugar favorito eres tú",
-  "Mi San Valentín 🌹"
-];
-
-document.addEventListener("click",e=>{
-  const d=document.createElement("div");
-  d.className="love-pop";
-  d.innerText=frases[Math.floor(Math.random()*frases.length)];
-  d.style.left=e.clientX+"px";
-  d.style.top=e.clientY+"px";
-  document.body.appendChild(d);
-  setTimeout(()=>d.remove(),2000);
-});
+},300);
 </script>
 
 </body>
 </html>
-
 
 
 
