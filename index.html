@@ -5,200 +5,204 @@
 <title>Para Niurka ❤️</title>
 
 <style>
-body {
-  margin: 0;
-  height: 100vh;
-  font-family: 'Georgia', serif;
-  overflow: hidden;
-  color: #fff;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  height:100vh;
+  font-family:Georgia, serif;
+  overflow:hidden;
+  color:#fff;
+  background:linear-gradient(270deg,#6a0dad,#b983ff,#ffafcc,#ff5fa2);
+  background-size:600% 600%;
+  animation:bg 16s ease infinite;
 }
 
-/* 💌 PORTADA */
-#cover {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(#ffd1dc, #ffb6c1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
-.envelope {
-  width: 260px;
-  height: 180px;
-  background: white;
-  border-radius: 10px;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 20px 40px rgba(0,0,0,.25);
-  animation: pulse 2s infinite;
+/* INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:2rem;
+  padding:30px;
+  z-index:20;
+  animation:introOut 3s forwards;
+  animation-delay:4s;
 }
 
-.envelope::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 50%, #f5f5f5 50%);
-  border-radius: 10px;
+@keyframes introOut{
+  to{opacity:0;pointer-events:none}
 }
 
-.heart {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
+/* SOBRE */
+#cover{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
 }
 
-@keyframes pulse {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+.envelope{
+  width:280px;
+  height:190px;
+  background:#ffd1dc;
+  border-radius:14px;
+  cursor:pointer;
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+  position:relative;
+  animation:pulse 2s infinite;
 }
 
-.open {
-  animation: open 1s forwards;
+.envelope::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,transparent 50%,#ffb6c1 50%);
+  border-radius:14px;
 }
 
-@keyframes open {
-  to { transform: scale(3); opacity: 0; }
+.heart{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
 }
 
-/* 🌈 FONDO ROMÁNTICO */
-#main {
-  display: none;
-  height: 100vh;
-  background: linear-gradient(
-    -45deg,
-    #6a0572,
-    #9d4edd,
-    #ff7eb3,
-    #ffc2d1
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 18s ease infinite;
-  overflow: hidden;
+@keyframes pulse{
+  50%{transform:scale(1.05)}
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.open{
+  animation:open 1.2s forwards;
 }
 
-/* 💖 CORAZONES */
-.background {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+@keyframes open{
+  to{transform:scale(3);opacity:0}
 }
 
-.bg-heart {
-  position: absolute;
-  color: rgba(255,160,200,0.25);
-  animation: floatUp linear infinite;
+/* CONTENIDO */
+#main{
+  display:none;
+  height:100vh;
 }
 
-@keyframes floatUp {
-  from { transform: translateY(110vh); opacity: 0; }
-  to { transform: translateY(-10vh); opacity: 1; }
+.background{
+  position:fixed;
+  inset:0;
+  z-index:0;
 }
 
-/* 📜 CARTA */
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  height: 85vh;
-  margin: 40px auto;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px;
-  overflow-y: auto;
-  transform: scaleY(0);
-  transform-origin: top;
-  animation: unfold 1.2s ease forwards;
+.bg-heart{
+  position:absolute;
+  animation:floatUp linear infinite;
 }
 
-@keyframes unfold {
-  to { transform: scaleY(1); }
+@keyframes floatUp{
+  from{transform:translateY(110vh)}
+  to{transform:translateY(-10vh)}
 }
 
-h1 {
-  text-align: center;
-  color: #ffd6f6;
-  font-size: 3rem;
+.container{
+  position:relative;
+  z-index:1;
+  max-width:900px;
+  height:85vh;
+  margin:40px auto;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(12px);
+  border-radius:25px;
+  padding:40px;
+  overflow-y:auto;
 }
 
-.page { display: none; }
-.page.active { display: block; }
+.page{display:none}
+.page.active{display:block}
 
-p {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  white-space: pre-line;
+h1{text-align:center;color:#ffd1dc}
+
+p{
+  font-size:1.2rem;
+  line-height:1.9;
+  white-space:pre-line;
 }
 
-/* ➡️ BOTONES */
-.next-btn {
-  display: block;
-  margin: 40px auto;
-  background: #ff5fa2;
-  border: none;
-  border-radius: 50px;
-  padding: 14px 30px;
-  color: #fff;
-  cursor: pointer;
+.lines{
+  color:#fff;
+  opacity:.85;
 }
 
-.music-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #ff5fa2;
-  border: none;
-  border-radius: 50px;
-  padding: 14px 22px;
-  color: white;
-  cursor: pointer;
-  z-index: 2;
+.next-btn{
+  display:block;
+  margin:30px auto;
+  padding:14px 30px;
+  border:none;
+  border-radius:50px;
+  background:#ff5fa2;
+  color:white;
+  cursor:pointer;
 }
 
-/* 💬 FRASES AL TOCAR */
-.love-word {
-  position: fixed;
-  font-size: 1.4rem;
-  color: #ffd6f6;
-  animation: fadeUp 2.5s ease forwards;
-  pointer-events: none;
+/* POP FRASES */
+.love-pop{
+  position:fixed;
+  font-size:22px;
+  animation:pop 2s forwards;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(-40px); }
+@keyframes pop{
+  to{opacity:0;transform:translateY(-80px)}
+}
+
+/* OPCIONES */
+.options button{
+  display:block;
+  margin:15px auto;
+  padding:12px 30px;
+  border:none;
+  border-radius:40px;
+  background:#ff9acb;
+  color:#fff;
+  font-size:1.1rem;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 💌 PORTADA -->
+<div id="intro">
+  Esto lo hago de todo corazón para ti<br><br>
+  <strong>Te amo ❤️</strong>
+</div>
+
 <div id="cover">
   <div class="envelope" onclick="openLetter()">
     <div class="heart">❤️</div>
   </div>
 </div>
 
-<!-- 🌸 CONTENIDO -->
 <div id="main">
   <div class="background" id="background"></div>
 
   <div class="container">
-    <div class="page active" id="page1">
-      <h1>Para mi Niurka ❤️</h1>
-      <p>
+
+    <div class="page active">
+      <h1>Para ti ❤️</h1>
+      <p class="lines">
 A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo pq si, a veces llega de la nada y se queda.  sin exagerar has sido el mejor amor que he tenido en mi vida
 
 Me gusta tu mirada. Hay algo en tus ojos que me enamora, algo que no sé explicar bien, pero que siempre quiero volver a ver.
@@ -216,12 +220,11 @@ Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun a
 No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente.
 
       </p>
-      <button class="next-btn" onclick="goNext()">Siguiente ➜</button>
+      <button class="next-btn" onclick="nextPage()">Siguiente</button>
     </div>
 
-    <div class="page" id="page2">
-      <h1>Siempre tú ❤️</h1>
-      <p>
+    <div class="page">
+      <p class="lines">
 ueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
 Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
 Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
@@ -231,96 +234,92 @@ Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasand
 No es suficiente para expresar todo el amor que tengo hacia ti,podría escribir miles de poemas y libros y aún asi no podría decirte ni la mitad de eso,te amo tanto,y no lo digo solo porque suene bonito cuando te digo que te amo me refiero a que te amo por encima de todo,te amo aunque hayan miles de problemas,te amor a pesar de que todavía somos muy jóvenes,te amo aunque el mundo se ponga en nuestra contra.🫶❤️💞🙈
 Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo..
       </p>
-      <button class="next-btn" onclick="goBack()">⬅ Volver</button>
+      <button class="next-btn" onclick="nextPage()">Siguiente</button>
     </div>
-  </div>
 
-  <audio id="music"></audio>
-  <button class="music-btn" onclick="playMusic()">🎵 Música</button>
+    <div class="page">
+      <p class="lines">
+---
+---
+---
+---
+---
+      </p>
+      <button class="next-btn" onclick="nextPage()">Siguiente</button>
+    </div>
+
+    <div class="page">
+      <p class="lines">
+---
+---
+---
+---
+---
+      </p>
+      <button class="next-btn" onclick="nextPage()">Siguiente</button>
+    </div>
+
+    <div class="page">
+      <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+      <div class="options">
+        <button>Si, acepto 💖</button>
+        <button>Si, mi amor 💕</button>
+        <button>Si, te amo ❤️</button>
+        <button>Sí 🌹</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <script>
-/* 📄 PÁGINAS */
-const page1 = document.getElementById("page1");
-const page2 = document.getElementById("page2");
+let pages=document.querySelectorAll(".page");
+let current=0;
 
-/* 🎵 PLAYLIST */
-const playlist = [
-  "teamop.mp3",
-  "teamopfinal.mp3",
-  "teamopfinal2.mp3",
-  "nadiemas.mp3",
-  "teamopfinal3.mp3",
-];
-
-let index = 0;
-const music = document.getElementById("music");
-music.volume = 0.4;
-
-function playMusic() {
-  if (!music.src) music.src = playlist[index];
-  music.play();
-}
-
-music.addEventListener("ended", () => {
-  index = (index + 1) % playlist.length;
-  music.src = playlist[index];
-  music.play();
-});
-
-/* 💌 ABRIR CARTA */
-function openLetter() {
+function openLetter(){
   document.querySelector(".envelope").classList.add("open");
-  playMusic();
-  setTimeout(() => {
-    document.getElementById("cover").style.display = "none";
-    document.getElementById("main").style.display = "block";
-  }, 800);
+  setTimeout(()=>{
+    document.getElementById("cover").style.display="none";
+    document.getElementById("main").style.display="block";
+  },900);
 }
 
-/* 📄 NAVEGACIÓN */
-function goNext() {
-  page1.classList.remove("active");
-  page2.classList.add("active");
+function nextPage(){
+  pages[current].classList.remove("active");
+  current++;
+  pages[current].classList.add("active");
 }
 
-function goBack() {
-  page2.classList.remove("active");
-  page1.classList.add("active");
-}
-
-/* 💖 CORAZONES */
-const bg = document.getElementById("background");
-setInterval(() => {
-  const h = document.createElement("div");
-  h.className = "bg-heart";
-  h.innerHTML = "❤️";
-  h.style.left = Math.random()*100 + "vw";
-  h.style.fontSize = (12 + Math.random()*25) + "px";
-  h.style.animationDuration = (6 + Math.random()*6) + "s";
+/* corazones */
+const bg=document.getElementById("background");
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="bg-heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(14+Math.random()*30)+"px";
+  h.style.animationDuration=(6+Math.random()*6)+"s";
   bg.appendChild(h);
-  setTimeout(() => h.remove(), 12000);
-}, 300);
+  setTimeout(()=>h.remove(),12000);
+},350);
 
-/* 💬 FRASES AL TOCAR */
-const loveWords = [
-  "Te amo Niurka",
-  "Eres la mejor",
+/* frases al tocar */
+const frases=[
+  "Te amo Niurka ❤️",
+  "Eres la mejor 💖",
   "Siempre tú",
-  "Mi amor",
-  "Me encantas",
-  "Contigo todo",
-  "Mi lugar seguro"
+  "Mi lugar favorito eres tú",
+  "Mi San Valentín 🌹"
 ];
 
-document.addEventListener("click", (e) => {
-  const w = document.createElement("div");
-  w.className = "love-word";
-  w.innerText = loveWords[Math.floor(Math.random() * loveWords.length)];
-  w.style.left = e.clientX + "px";
-  w.style.top = e.clientY + "px";
-  document.body.appendChild(w);
-  setTimeout(() => w.remove(), 2500);
+document.addEventListener("click",e=>{
+  const d=document.createElement("div");
+  d.className="love-pop";
+  d.innerText=frases[Math.floor(Math.random()*frases.length)];
+  d.style.left=e.clientX+"px";
+  d.style.top=e.clientY+"px";
+  document.body.appendChild(d);
+  setTimeout(()=>d.remove(),2000);
 });
 </script>
 
