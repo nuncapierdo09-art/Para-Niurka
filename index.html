@@ -13,7 +13,7 @@ body {
   color: #fff;
 }
 
-/* 💌 CARTA */
+/* 💌 PORTADA */
 #cover {
   position: fixed;
   inset: 0;
@@ -65,14 +65,29 @@ body {
   to { transform: scale(3); opacity: 0; }
 }
 
-/* 🌌 CONTENIDO */
+/* 🌈 FONDO ROMÁNTICO */
 #main {
   display: none;
   height: 100vh;
-  background: radial-gradient(circle at top, #3a1c71, #000);
+  background: linear-gradient(
+    -45deg,
+    #6a0572,
+    #9d4edd,
+    #ff7eb3,
+    #ffc2d1
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
   overflow: hidden;
 }
 
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 💖 CORAZONES */
 .background {
   position: fixed;
   inset: 0;
@@ -81,7 +96,7 @@ body {
 
 .bg-heart {
   position: absolute;
-  color: rgba(255, 120, 180, 0.35);
+  color: rgba(255,160,200,0.25);
   animation: floatUp linear infinite;
 }
 
@@ -90,6 +105,7 @@ body {
   to { transform: translateY(-10vh); opacity: 1; }
 }
 
+/* 📜 CARTA */
 .container {
   position: relative;
   z-index: 1;
@@ -101,11 +117,18 @@ body {
   border-radius: 20px;
   padding: 40px;
   overflow-y: auto;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: unfold 1.2s ease forwards;
+}
+
+@keyframes unfold {
+  to { transform: scaleY(1); }
 }
 
 h1 {
   text-align: center;
-  color: #ff9acb;
+  color: #ffd6f6;
   font-size: 3rem;
 }
 
@@ -118,6 +141,7 @@ p {
   white-space: pre-line;
 }
 
+/* ➡️ BOTONES */
 .next-btn {
   display: block;
   margin: 40px auto;
@@ -141,25 +165,37 @@ p {
   cursor: pointer;
   z-index: 2;
 }
+
+/* 💬 FRASES AL TOCAR */
+.love-word {
+  position: fixed;
+  font-size: 1.4rem;
+  color: #ffd6f6;
+  animation: fadeUp 2.5s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(-40px); }
+}
 </style>
 </head>
 
 <body>
 
-<!-- CARTA -->
+<!-- 💌 PORTADA -->
 <div id="cover">
-  Calgary
   <div class="envelope" onclick="openLetter()">
     <div class="heart">❤️</div>
   </div>
 </div>
 
-<!-- CONTENIDO -->
+<!-- 🌸 CONTENIDO -->
 <div id="main">
   <div class="background" id="background"></div>
 
   <div class="container">
-
     <div class="page active" id="page1">
       <h1>Para mi Niurka ❤️</h1>
       <p>
@@ -177,27 +213,26 @@ No necesito promesas grandes ni palabras bonitas todo el tiempo. Me basta con tu
 
 Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun así decidí quedarme. Te vi con miedos, con tus dudas, con heridas, y aun así te elegí. Porque en todo eso también hay belleza, y yo sí la veo.
 
-No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente. 
+No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente.
+
       </p>
       <button class="next-btn" onclick="goNext()">Siguiente ➜</button>
     </div>
 
     <div class="page" id="page2">
-      <h1>Te amo mucho Niurka ❤️</h1>
+      <h1>Siempre tú ❤️</h1>
       <p>
-Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
+ueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
 Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
 Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
-      ´´antes de tocar tus labios quiero tocar tu corazón y antes de conquistar tu cuerpo quiero conquistar tu amor ♥´´  .
-
-     <h1>  Sabes, aveces pienso que decirte teamo no basta, porque...</h1>
+      ´´antes de tocar tus labios quiero tocar tu corazón y antes de conquistar tu cuerpo quiero conquistar tu amor ♥´´
+  <h1>  Sabes, aveces pienso que decirte teamo no basta, porque...</h1>
                                           Un te amo
 No es suficiente para expresar todo el amor que tengo hacia ti,podría escribir miles de poemas y libros y aún asi no podría decirte ni la mitad de eso,te amo tanto,y no lo digo solo porque suene bonito cuando te digo que te amo me refiero a que te amo por encima de todo,te amo aunque hayan miles de problemas,te amor a pesar de que todavía somos muy jóvenes,te amo aunque el mundo se ponga en nuestra contra.🫶❤️💞🙈
 Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo..
       </p>
       <button class="next-btn" onclick="goBack()">⬅ Volver</button>
     </div>
-
   </div>
 
   <audio id="music"></audio>
@@ -205,17 +240,16 @@ Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que 
 </div>
 
 <script>
+/* 📄 PÁGINAS */
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 
-/* 🎵 PLAYLIST COMPLETA */
+/* 🎵 PLAYLIST */
 const playlist = [
   "teamop.mp3",
   "teamopfinal.mp3",
   "teamopfinal2.mp3",
   "nadiemas.mp3",
-  "teamopfinal34.mp3",
-  "teamopfinal3.mp3",
 ];
 
 let index = 0;
@@ -227,26 +261,23 @@ function playMusic() {
   music.play();
 }
 
-/* ▶️ Cambia sola cuando termina */
 music.addEventListener("ended", () => {
-  index++;
-  if (index >= playlist.length) index = 0;
+  index = (index + 1) % playlist.length;
   music.src = playlist[index];
   music.play();
 });
 
-/* 💌 Abrir carta + música automática */
+/* 💌 ABRIR CARTA */
 function openLetter() {
   document.querySelector(".envelope").classList.add("open");
   playMusic();
-
   setTimeout(() => {
     document.getElementById("cover").style.display = "none";
     document.getElementById("main").style.display = "block";
   }, 800);
 }
 
-/* 📄 Navegación */
+/* 📄 NAVEGACIÓN */
 function goNext() {
   page1.classList.remove("active");
   page2.classList.add("active");
@@ -257,7 +288,7 @@ function goBack() {
   page1.classList.add("active");
 }
 
-/* 💖 Corazones */
+/* 💖 CORAZONES */
 const bg = document.getElementById("background");
 setInterval(() => {
   const h = document.createElement("div");
@@ -269,10 +300,32 @@ setInterval(() => {
   bg.appendChild(h);
   setTimeout(() => h.remove(), 12000);
 }, 300);
+
+/* 💬 FRASES AL TOCAR */
+const loveWords = [
+  "Te amo Niurka",
+  "Eres la mejor",
+  "Siempre tú",
+  "Mi amor",
+  "Me encantas",
+  "Contigo todo",
+  "Mi lugar seguro"
+];
+
+document.addEventListener("click", (e) => {
+  const w = document.createElement("div");
+  w.className = "love-word";
+  w.innerText = loveWords[Math.floor(Math.random() * loveWords.length)];
+  w.style.left = e.clientX + "px";
+  w.style.top = e.clientY + "px";
+  document.body.appendChild(w);
+  setTimeout(() => w.remove(), 2500);
+});
 </script>
 
 </body>
 </html>
+
 
 
 
