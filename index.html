@@ -209,12 +209,12 @@ p{
       <h1>¿Quieres ser mi<br>San Valentín?</h1>
       <div class="big-heart">❤️❤️❤️</div>
       <div class="arrow">🏹❤️</div>
-      <button class="next-btn">Sí, acepto 💖</button>
-      <button class="next-btn">Sí, mi amor 💕</button>
-      <button class="next-btn">Sí, te amo ❤️</button>
-      <button class="next-btn">Sí 🌹</button>
-    </div>
-    <div id="finalMsg" style="display:none;margin-top:40px">
+      <button class="next-btn" onclick="showFinal()">Sí, acepto 💖</button>
+      <button class="next-btn" onclick="showFinal()">Sí, mi amor 💕</button>
+      <button class="next-btn" onclick="showFinal()">Sí, te amo ❤️</button>
+      <button class="next-btn" onclick="showFinal()">Sí 🌹</button>
+
+      <div id="finalMsg" style="display:none;margin-top:40px">
         <h1>Sabía que dirías que sí ;D</h1>
         <h1>TE AMO ❤️</h1>
       </div>
@@ -231,12 +231,13 @@ const cover=document.getElementById("cover");
 const main=document.getElementById("main");
 const background=document.getElementById("background");
 
-const playlist=["teamop.mp3",
+const playlist=[
+  "teamop.mp3",
   "teamopfinal.mp3",
   "nadiemas.mp3",
-  "teamopfinal2.mp3",
-  "teamopfinal1.mp3",
-  "teamopfinal34.mp3"];
+  "teamopfinal2.mp3"
+];
+
 let mi=0;
 const music=document.getElementById("music");
 music.volume=0.4;
@@ -252,8 +253,10 @@ music.addEventListener("ended",()=>{
   music.play();
 });
 
+/* ===== TEXTOS ===== */
 const textos=[
-`A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo pq si, a veces llega de la nada y se queda.  sin exagerar has sido el mejor amor que he tenido en mi vida
+`----- PAGINA 1 -----
+A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo pq si, a veces llega de la nada y se queda.  sin exagerar has sido el mejor amor que he tenido en mi vida
 
 Me gusta tu mirada. Hay algo en tus ojos que me enamora, algo que no sé explicar bien, pero que siempre quiero volver a ver.
 
@@ -267,25 +270,25 @@ No necesito promesas grandes ni palabras bonitas todo el tiempo. Me basta con tu
 
 Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun así decidí quedarme. Te vi con miedos, con tus dudas, con heridas, y aun así te elegí. Porque en todo eso también hay belleza, y yo sí la veo.
 
-No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente.
+No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente
+`,
 
-<p id="t1"></p> <img src="img1.jpg" alt="imagen 1">
-
-
-
----`,
-`Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
+`----- PAGINA 2 -----
+Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
 Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
 Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
       ´´antes de tocar tus labios quiero tocar tu corazón y antes de conquistar tu cuerpo quiero conquistar tu amor ♥´´
-  <h1>  Sabes, aveces pienso que decirte teamo no basta, porque...</h1>
+    Sabes, aveces pienso que decirte teamo no basta, porque...
                                           Un te amo
 No es suficiente para expresar todo el amor que tengo hacia ti,podría escribir miles de poemas y libros y aún asi no podría decirte ni la mitad de eso,te amo tanto,y no lo digo solo porque suene bonito cuando te digo que te amo me refiero a que te amo por encima de todo,te amo aunque hayan miles de problemas,te amor a pesar de que todavía somos muy jóvenes,te amo aunque el mundo se ponga en nuestra contra.🫶❤️💞🙈
 Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo..`,
 `Eres tu la ilucion, que hace tiempo cumpli, mas tu sigues siendo en realidad todavia un sueño para mi..
 Si me preguntas cuántas veces viniste a mi mente, te diría una vez, porque llegaste y nunca te fuiste, y no es solo una forma de hablar, es que desde que apareciste algo cambió en mí, algo se quedó quieto y al mismo tiempo empezó a tener sentido, no te pienso como se piensa una idea, te pienso como se respira, sin darme cuenta, sin poder evitarlo, estás ahí, en lo simple, en lo de todos los días, en las canciones que suenan sin razón, en el silencio que se siente más tranquilo, en las palabras que me salen sin querer, no sé en qué momento dejaste de ser recuerdo y empezaste a ser parte de todo, hay personas que pasan, pero tú te quedaste como quien encuentra su lugar y decide no irse más, a veces me pregunto por qué y la verdad es que no encuentro explicación, quizás es porque contigo las cosas no se piensan, se sienten, no hubo promesas, ni planes, ni un principio exacto, solo llegaste y desde entonces mi mente y mi corazón encontraron algo que no sabían que buscaban, por eso si me preguntan cuántas veces viniste a mi mente seguiré diciendo una sola vez, porque llegaste una vez pero te quedaste en todas mis formas, en mis gestos, en mis días buenos y en los que no lo son, y tal vez ese sea el verdadero significado de amar, no contar las veces que alguien aparece en tu mente sino darse cuenta de que ya vive en uno, sin hacer ruido, sin avisar, pero quedándose para siempre 
-[Todo fue tan espontáneo, tan natural,que a ninguno de los dos nos pareció nada raro que, de pronto ,mi mano estuviera en su mano y que nos miraramos a los ojos como dos tontos]`,
-`Lo siguiente que veras son escritas y creadas por mi a puño y letra, y todo esto pensando en ti, proque eres mi motivación e inspiración:
+[Todo fue tan espontáneo, tan natural,que a ninguno de los dos nos pareció nada raro que, de pronto ,mi mano estuviera en su mano y que nos miraramos a los ojos como dos tontos]
+`,
+
+`----- PAGINA 3 -----
+Lo siguiente que veras son escritas y creadas por mi a puño y letra, y todo esto pensando en ti, proque eres mi motivación e inspiración:
 Me gusta pensarte en años,
 no solo en momentos.
 Me gusta imaginarte
@@ -329,7 +332,52 @@ robándome la llave del sosiego.
 
 En esta historia sólo yo me muero 
 y moriré de amor porque te quiero, 
-porque te quiero, amor, a sangre y fuego."+-`
+porque te quiero, amor, a sangre y fuego
+`,
+
+`----- PAGINA 4 -----
+No sé bien cómo empezar esto, la verdad.
+Solo sé que cuando te conocí nunca pensé que tú me ibas a hablar.
+Ni de broma.
+Te veía y ya, me gustabas desde que llegaste, pero en mi cabeza tú estabas muy arriba y yo no tanto, así que ni me hacía ideas.
+Era como “me gusta, pero hasta ahí”.
+
+Después empezamos a hablar, normal, sin intención.
+Charlas cualquiera, bromas, molestarnos, reírnos por tonterías.
+Yo la pasaba bien contigo sin darme cuenta.
+Me sentía cómodo, como si no tuviera que pensar qué decir ni cómo actuar.
+Y así, sin buscarlo, nos hicimos amigos.
+Luego mejores amigos.
+Y eso me gustaba mucho.
+
+Pero hubo un momento en que ya no te veía igual.
+No fue de golpe, fue raro.
+Simplemente ya no sentía lo mismo cuando te veía.
+No era solo verte y ya.
+Sentía algo más, algo que no sabía explicar.
+Mi cabeza me decía que no, que mejor no, que no arruine lo que teníamos, que no me meta en problemas.
+Pero mi corazón era necio y decía que sí, que contigo valía la pena aunque salga mal.
+
+Empecé a acercarme más, a buscarte más, a intentar robarte besos.
+Y sí, te los robé.
+Con nervios, con miedo, pero con ganas.
+Te invité a salir sin estar seguro de nada, sin saber si dirías que sí.
+Y aun así lo hice.
+Y poco a poco se dio.
+Eso que parecía tan difícil, tan lejos, tan imposible.
+
+Tú, con ese corazón tan sensible, tan frágil a veces, con una forma de querer tan distinta.
+Y yo aprendiendo sobre la marcha, aprendiendo a no apurarte, a cuidarte, a entenderte.
+Mirando atrás y pensando cómo pasamos de hablarnos por cualquier cosa a estar aquí.
+
+De pensar que no estaba a tu nivel, a tenerte conmigo.
+De ser amigos, a ser algo más.
+
+Y escribo esto porque quería decirlo así, sin Esquivos, al grano bby.
+Porque desde el inicio me gustaste aunque no lo dijera.
+Porque tuve miedo, dudé, pero igual me lancé.
+Y porque contigo, por primera vez, sentí que el corazón tenía más razón que la cabeza.
+`
 ];
 
 let pages=document.querySelectorAll(".page");
@@ -363,6 +411,10 @@ function openLetter(){
   },900);
 }
 
+function showFinal(){
+  document.getElementById("finalMsg").style.display="block";
+}
+
 setInterval(()=>{
   const h=document.createElement("div");
   h.className="bg-heart";
@@ -377,7 +429,4 @@ setInterval(()=>{
 
 </body>
 </html>
-
-
-
 
