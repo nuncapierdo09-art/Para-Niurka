@@ -1,1194 +1,1230 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Para Niurka ❤️</title>
 
+
 <style>
-*{box-sizing:border-box}
 
-body{
-  margin:0;
-  height:100vh;
-  font-family:Georgia, serif;
-  overflow:hidden;
-  color:#fff;
-  background:linear-gradient(270deg,#6a0dad,#b983ff,#ffafcc,#ff5fa2);
-  background-size:600% 600%;
-  animation:bg 18s ease infinite;
-}
-
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-/* INTRO */
-#intro{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  font-size:2rem;
-  padding:30px;
-  z-index:30;
-  animation:introOut 3s forwards;
-  animation-delay:4s;
-}
-
-@keyframes introOut{
-  to{opacity:0;pointer-events:none}
-}
-
-/* SOBRE */
-#cover{
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:20;
-}
-
-.envelope{
-  width:280px;
-  height:190px;
-  background:#ffd1dc;
-  border-radius:14px;
-  cursor:pointer;
-  box-shadow:0 20px 40px rgba(0,0,0,.3);
-  position:relative;
-  animation:pulse 2s infinite;
-}
-
-.envelope::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,transparent 50%,#ffb6c1 50%);
-  border-radius:14px;
-}
-
-.heart{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:48px;
-}
-
-@keyframes pulse{
-  50%{transform:scale(1.05)}
-}
-
-.open{
-  animation:open 1.2s forwards;
-}
-
-@keyframes open{
-  to{transform:scale(3);opacity:0}
-}
-
-/* CONTENIDO */
-#main{display:none;height:100vh}
-
-.background{
-  position:fixed;
-  inset:0;
-  z-index:0;
-}
-
-.bg-heart{
-  position:absolute;
-  animation:floatUp linear infinite;
-}
-
-@keyframes floatUp{
-  from{transform:translateY(110vh)}
-  to{transform:translateY(-10vh)}
-}
-
-.container{
-  position:relative;
-  z-index:1;
-  max-width:900px;
-  height:85vh;
-  margin:40px auto;
-  background:rgba(255,255,255,.15);
-  backdrop-filter:blur(12px);
-  border-radius:25px;
-  padding:40px;
-  overflow-y:auto;
-}
-
-.page{display:none}
-.page.active{display:block}
-
-h1{text-align:center;color:#ffd1dc}
-
-p{
-  font-size:1.2rem;
-  line-height:1.9;
-  white-space:pre-line;
-  min-height:300px;
-}
-
-.next-btn{
-  display:block;
-  margin:30px auto;
-  padding:14px 30px;
-  border:none;
-  border-radius:50px;
-  background:#ff5fa2;
-  color:white;
-  cursor:pointer;
-}
-
-/* FINAL */
-.final{text-align:center}
-.final h1{font-size:3.5rem}
-.big-heart{font-size:80px;animation:beat 1.2s infinite}
-@keyframes beat{50%{transform:scale(1.2)}}
-.arrow{font-size:60px;animation:arrow 2s infinite}
-@keyframes arrow{
-  0%{transform:translateX(-40px)}
-  50%{transform:translateX(40px)}
-  100%{transform:translateX(-40px)}
-}
-/*=====================================================
-
-        6 MESES CONTIGO ❤️
-        STYLE.CSS
-        PARTE 2A
-
-=====================================================*/
-
-
-/*=========================
-        GOOGLE FONTS
-=========================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
-
-
-/*=========================
-        VARIABLES
-=========================*/
-
-:root{
-
---pink:#ff4fa2;
---pink2:#ff78bc;
---pink3:#ffb7da;
-
---purple:#c87cff;
---purple2:#a855f7;
-
---white:#ffffff;
-
---dark:#221326;
-
---glass:rgba(255,255,255,.12);
-
---glassBorder:rgba(255,255,255,.25);
-
---shadow:
-
-0 20px 50px rgba(0,0,0,.18);
-
-}
-
-
-/*=========================
-      RESET
-=========================*/
+/* =========================
+   RESET
+========================= */
 
 *{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-scroll-behavior:smooth;
-
-font-family:Poppins,sans-serif;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Georgia,serif;
 }
 
-html{
-
-overflow-x:hidden;
-
-}
 
 body{
 
-background:linear-gradient(
--45deg,
-#ff90c8,
-#ffc5e7,
-#f8b8ff,
-#ff8ac0,
-#c688ff
-);
+    min-height:100vh;
+    overflow:hidden;
 
-background-size:500% 500%;
+    color:white;
 
-animation:backgroundMove 18s ease infinite;
+    background:
+    linear-gradient(
+    270deg,
+    #6a0dad,
+    #b983ff,
+    #ffafcc,
+    #ff5fa2
+    );
 
-color:white;
+    background-size:600% 600%;
 
-overflow-x:hidden;
-
-min-height:100vh;
-
-position:relative;
+    animation:bg 18s ease infinite;
 
 }
 
 
-/*=========================
-    FONDO ANIMADO
-=========================*/
 
-@keyframes backgroundMove{
+@keyframes bg{
 
 0%{
-
 background-position:0% 50%;
-
-}
-
-25%{
-
-background-position:50% 100%;
-
 }
 
 50%{
-
 background-position:100% 50%;
-
-}
-
-75%{
-
-background-position:50% 0%;
-
 }
 
 100%{
-
 background-position:0% 50%;
-
 }
 
 }
 
 
-/*=========================
-     SCROLL
-=========================*/
 
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#ffe6f5;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:linear-gradient(
-
-#ff4fa2,
-
-#ff78bc,
-
-#c87cff
-
-);
-
-border-radius:20px;
-
-}
+/* =========================
+       INTRO
+========================= */
 
 
-/*=========================
-      LOADER
-=========================*/
-
-#loader{
+#intro{
 
 position:fixed;
 
-top:0;
+inset:0;
 
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#ffd4ec,
-
-#ffb5dc,
-
-#ff89c4
-
-);
+background:#000;
 
 display:flex;
 
 justify-content:center;
 
 align-items:center;
-
-z-index:99999;
-
-transition:1s;
-
-}
-
-.loader-heart{
-
-font-size:90px;
-
-animation:
-
-heartBeat 1.2s infinite;
-
-filter:
-
-drop-shadow(0 0 20px #ff3d96);
-
-}
-
-
-@keyframes heartBeat{
-
-0%{
-
-transform:scale(1);
-
-}
-
-25%{
-
-transform:scale(1.12);
-
-}
-
-50%{
-
-transform:scale(.95);
-
-}
-
-75%{
-
-transform:scale(1.15);
-
-}
-
-100%{
-
-transform:scale(1);
-
-}
-
-}
-
-
-/*=========================
-     BIENVENIDA
-=========================*/
-
-#welcome{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:50px;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-
-/*=========================
- GLASS CARD
-=========================*/
-
-.glass{
-
-width:900px;
-
-max-width:95%;
-
-padding:60px;
-
-background:var(--glass);
-
-border:
-
-1px solid var(--glassBorder);
-
-backdrop-filter:blur(18px);
-
-border-radius:35px;
-
-box-shadow:var(--shadow);
 
 text-align:center;
 
+font-size:2rem;
+
+padding:30px;
+
+z-index:100;
+
+
 animation:
+introOut 3s forwards;
 
-fadeUp 1.5s ease;
-
-}
-
-
-/*=========================
- TITULOS
-=========================*/
-
-.glass h2{
-
-font-size:25px;
-
-font-weight:400;
-
-margin-bottom:15px;
-
-letter-spacing:2px;
-
-}
-
-.glass h1{
-
-font-size:90px;
-
-font-family:"Great Vibes",cursive;
-
-color:white;
-
-text-shadow:
-
-0 0 10px #fff,
-
-0 0 25px #ff67b5,
-
-0 0 40px #ff3f95;
-
-margin-bottom:25px;
-
-}
-
-.glass p{
-
-font-size:20px;
-
-line-height:1.8;
-
-opacity:.95;
-
-max-width:700px;
-
-margin:auto;
+animation-delay:4s;
 
 }
 
 
-/*=========================
- BOTON
-=========================*/
 
-#startButton{
+@keyframes introOut{
 
-margin-top:45px;
+to{
 
-padding:
+opacity:0;
 
-18px 55px;
+pointer-events:none;
+
+}
+
+}
+
+
+
+/* =========================
+       SOBRE
+========================= */
+
+
+#cover{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:50;
+
+}
+
+
+
+.envelope{
+
+
+width:300px;
+
+height:200px;
+
+background:#ffb6c1;
+
+border-radius:15px;
+
+position:relative;
+
+cursor:pointer;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.35);
+
+
+animation:pulse 2s infinite;
+
+
+}
+
+
+
+
+.envelope::before{
+
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background:
+linear-gradient(
+135deg,
+transparent 50%,
+#ff8fb1 50%
+);
+
+
+border-radius:15px;
+
+
+}
+
+
+
+.heart{
+
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:60px;
+
+z-index:2;
+
+
+}
+
+
+
+@keyframes pulse{
+
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+
+}
+
+
+
+
+/* Animación abrir */
+
+
+.envelope.open{
+
+
+animation:openEnvelope 1.2s forwards;
+
+
+}
+
+
+
+@keyframes openEnvelope{
+
+
+to{
+
+transform:scale(3);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* =========================
+       CONTENIDO
+========================= */
+
+
+#main{
+
+
+display:none;
+
+height:100vh;
+
+}
+
+
+
+.background{
+
+
+position:fixed;
+
+inset:0;
+
+z-index:-1;
+
+
+}
+
+
+
+.bg-heart{
+
+
+position:absolute;
+
+animation:floatUp linear infinite;
+
+
+}
+
+
+
+@keyframes floatUp{
+
+
+from{
+
+transform:translateY(110vh);
+
+}
+
+
+to{
+
+transform:translateY(-10vh);
+
+}
+
+
+}
+
+
+
+
+
+.container{
+
+
+width:90%;
+
+max-width:900px;
+
+
+height:85vh;
+
+
+margin:40px auto;
+
+
+padding:40px;
+
+
+background:
+rgba(255,255,255,.15);
+
+
+backdrop-filter:blur(12px);
+
+
+border-radius:25px;
+
+
+overflow-y:auto;
+
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+
+.page{
+
+display:none;
+
+}
+
+
+
+.page.active{
+
+display:block;
+
+}
+
+
+
+
+
+h1{
+
+
+text-align:center;
+
+color:#ffd1dc;
+
+font-size:3rem;
+
+
+}
+
+
+
+p{
+
+
+font-size:1.2rem;
+
+line-height:1.9;
+
+white-space:pre-line;
+
+min-height:300px;
+
+
+}
+
+
+
+
+.next-btn{
+
+
+display:block;
+
+margin:30px auto;
+
+
+padding:14px 35px;
+
 
 border:none;
 
 border-radius:50px;
 
-cursor:pointer;
 
-font-size:19px;
+background:#ff5fa2;
 
-font-weight:600;
 
 color:white;
 
-background:
 
-linear-gradient(
+font-size:16px;
 
-90deg,
-
-#ff4fa2,
-
-#ff7fc2,
-
-#c87cff,
-
-#ff4fa2
-
-);
-
-background-size:300%;
-
-animation:
-
-rgbButton 7s linear infinite;
-
-transition:.4s;
-
-box-shadow:
-
-0 15px 35px
-
-rgba(255,79,162,.35);
-
-}
-
-#startButton:hover{
-
-transform:
-
-translateY(-8px)
-
-scale(1.05);
-
-box-shadow:
-
-0 25px 50px
-
-rgba(255,79,162,.5);
-
-}
-
-
-@keyframes rgbButton{
-
-0%{
-
-background-position:0%;
-
-}
-
-100%{
-
-background-position:300%;
-
-}
-
-}
-
-
-/*=========================
-    FADE
-=========================*/
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:
-
-translateY(50px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:
-
-translateY(0);
-
-}
-
-}
-
-
-/*=========================
-      SOBRE
-=========================*/
-
-#envelopeSection{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
-padding:80px;
-
-}
-
-#envelope{
-
-position:relative;
-
-width:380px;
-
-height:260px;
 
 cursor:pointer;
 
-transition:.6s;
 
-}
+transition:.3s;
 
-#envelope:hover{
-
-transform:
-
-translateY(-12px);
 
 }
 
 
-/*=========================
-    SOMBRA
-=========================*/
 
-.shadow{
+.next-btn:hover{
 
-position:absolute;
 
-bottom:-20px;
+transform:scale(1.08);
 
-left:50%;
-
-transform:
-
-translateX(-50%);
-
-width:280px;
-
-height:25px;
-
-background:
-
-rgba(0,0,0,.18);
-
-filter:blur(18px);
-
-border-radius:50%;
 
 }
 
 
-/*=========================
-  BASE DEL SOBRE
-=========================*/
 
-.back{
+/* =========================
+       FINAL
+========================= */
 
-position:absolute;
 
-width:100%;
+.final{
 
-height:100%;
-
-background:
-
-linear-gradient(
-
-145deg,
-
-#ff6ab5,
-
-#ff90ca
-
-);
-
-border-radius:15px;
-
-overflow:hidden;
-
-box-shadow:
-
-0 20px 40px
-
-rgba(0,0,0,.18);
+text-align:center;
 
 }
 
 
-/*=========================
- SOLAPA
-=========================*/
 
-.flap{
+.big-heart{
 
-position:absolute;
 
-top:0;
+font-size:80px;
 
-left:0;
+animation:beat 1.2s infinite;
 
-width:100%;
-
-height:140px;
-
-background:
-
-linear-gradient(
-
-#ff87c7,
-
-#ff5ea9
-
-);
-
-clip-path:
-
-polygon(
-
-0 0,
-
-100% 0,
-
-50% 100%
-
-);
-
-transform-origin:top;
-
-transition:.9s;
-
-z-index:10;
 
 }
 
 
-/*=========================
- CARTA
-=========================*/
 
-.letter{
+@keyframes beat{
 
-position:absolute;
 
-left:20px;
+50%{
 
-right:20px;
+transform:scale(1.2);
+
+}
+
+
+}
+
+
+
+
+
+.arrow{
+
+
+font-size:60px;
+
+animation:arrow 2s infinite;
+
+
+}
+
+
+
+@keyframes arrow{
+
+
+0%{
+
+transform:translateX(-40px);
+
+}
+
+
+50%{
+
+transform:translateX(40px);
+
+}
+
+
+100%{
+
+transform:translateX(-40px);
+
+}
+
+
+}
+
+
+
+
+/* =========================
+       MUSICA
+========================= */
+
+
+.music-btn{
+
+
+position:fixed;
+
 
 bottom:20px;
 
-height:180px;
-
-background:white;
-
-border-radius:18px;
-
-padding:25px;
-
-color:#555;
-
-transition:1s;
-
-box-shadow:
-
-0 20px 40px
-
-rgba(0,0,0,.15);
-
-z-index:5;
-
-}
-
-.letter h3{
-
-font-family:"Great Vibes";
-
-font-size:42px;
-
-color:#ff4fa2;
-
-margin-bottom:10px;
-
-}
-
-.letter p{
-
-font-size:15px;
-
-line-height:1.8;
-
-}
+right:20px;
 
 
-/*=========================
-   CLASES JS
-=========================*/
+padding:14px 25px;
 
-#envelope.open .flap{
 
-transform:
+border:none;
 
-rotateX(180deg);
 
-}
+border-radius:50px;
 
-#envelope.open .letter{
 
-transform:
+background:#ff5fa2;
 
-translateY(-130px);
+
+color:white;
+
+
+cursor:pointer;
+
+
+z-index:10;
+
 
 }
 
 
 
-/* MUSICA */
-.music-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  padding:14px 22px;
-  border:none;
-  border-radius:50px;
-  background:#ff5fa2;
-  color:white;
-  cursor:pointer;
-  z-index:5;
-}
 </style>
+
 </head>
+
+
 
 <body>
 
+
 <div id="intro">
-  Esto lo hago de todo corazón para ti<br><br>
-  <strong>Te amo ❤️  (no te burles de mi musica ok?) </strong>
+
+Esto lo hago de todo corazón para ti ❤️
+
+<br><br>
+
+<strong>
+Te amo ❤️
+</strong>
+
 </div>
+
+
 
 <div id="cover">
-  <div class="envelope" onclick="openLetter()">
-    <div class="heart">❤️</div>
-  </div>
+
+
+<div class="envelope" onclick="openLetter()">
+
+
+
+<div class="heart">
+
+❤️
+
 </div>
+
+
+</div>
+
+
+</div>
+
+
+
 
 <div id="main">
-  <div class="background" id="background"></div>
 
-  <div class="container">
 
-    <div class="page active">
-      <h1>Para ti ❤️</h1>
-      <p id="t1"></p>
-      <button class="next-btn" onclick="next()">Siguiente</button>
-    </div>
+<div class="background" id="background"></div>
 
-    <div class="page"><p id="t2"></p><button class="next-btn" onclick="next()">Siguiente</button></div>
-    <div class="page"><p id="t3"></p><button class="next-btn" onclick="next()">Siguiente</button></div>
-    <div class="page"><p id="t4"></p><button class="next-btn" onclick="next()">Siguiente</button></div>
 
-    <div class="page final">
-      <h1>¿Quieres ser mi<br>San Valentín?</h1>
-      <div class="big-heart">❤️❤️❤️</div>
-      <div class="arrow">🏹❤️</div>
-      <button class="next-btn" onclick="showFinal()">Sí, acepto 💖</button>
-      <button class="next-btn" onclick="showFinal()">Sí, mi amor 💕</button>
-      <button class="next-btn" onclick="showFinal()">Sí, te amo ❤️</button>
-      <button class="next-btn" onclick="showFinal()">Sí 🌹</button>
 
-      <div id="finalMsg" style="display:none;margin-top:40px">
-        <h1>Sabía que dirías que sí ;D</h1>
-        <h1>TE AMO ❤️</h1>
-      </div>
-    </div>
+<div class="container">
 
-  </div>
 
-  <audio id="music"></audio>
-  <button class="music-btn" onclick="playMusic()">🎵 Música</button>
+
+<div class="page active">
+
+<h1>
+Para ti ❤️
+</h1>
+
+
+<p id="t1"></p>
+
+
+<button class="next-btn" onclick="next()">
+
+Siguiente
+
+</button>
+
+
 </div>
 
-<script>
-const cover=document.getElementById("cover");
-const main=document.getElementById("main");
-const background=document.getElementById("background");
 
-const playlist=[
-  "teamop.mp3",
-  "teamopfinal.mp3",
-  "nadiemas.mp3",
-  "teamopfinal2.mp3"
-];
 
-let mi=0;
-const music=document.getElementById("music");
-music.volume=0.4;
 
-function playMusic(){
-  if(!music.src) music.src=playlist[mi];
-  music.play();
-}
 
-music.addEventListener("ended",()=>{
-  mi=(mi+1)%playlist.length;
-  music.src=playlist[mi];
-  music.play();
-});
+<div class="page">
 
-/* ===== TEXTOS ===== */
-const textos=[
+
+<p id="t2"></p>
+
+
+<button class="next-btn" onclick="next()">
+
+Siguiente
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="page">
+
+
+<p id="t3"></p>
+
+
+<button class="next-btn" onclick="next()">
+
+Siguiente
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="page final">
+
+
+<h1>
+
+¿Quieres ser mi<br>
+San Valentín?
+
+</h1>
+
+
+<div class="big-heart">
+
+❤️❤️❤️
+
+</div>
+
+
+
+<div class="arrow">
+
+🏹❤️
+
+</div>
+
+
+
+<button class="next-btn" onclick="showFinal()">
+
+Sí, acepto 💖
+
+</button>
+
+
+<button class="next-btn" onclick="showFinal()">
+
+Sí, mi amor 💕
+
+</button>
+
+
+
+<div id="finalMsg" style="display:none">
+
+<h1>
+
+Sabía que dirías que sí ;D
+
+</h1>
+
+
+<h1>
+
+TE AMO ❤️
+
+</h1>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+<audio id="music"></audio>
+
+
+<button class="music-btn" onclick="playMusic()">
+
+🎵 Música
+
+</button>
+
+
+
+</div> 
+  const textos = [
+
 `
 Para ti, mi amor.
 
-No sé cuántas veces he abierto este documento intentando escribirte algo. Siempre termino borrándolo porque siento que ninguna palabra alcanza para decirte todo lo que significas para mí. Pero hoy ya no quiero borrar nada. Quiero escribirte exactamente lo que me vaya acordando, porque nuestra historia merece quedarse en algún lugar, y quiero que ese lugar sean estas páginas.
+No sé cuántas veces he abierto este documento intentando escribirte algo. Siempre termino borrándolo porque siento que ninguna palabra alcanza para decirte todo lo que significas para mí.
 
-A veces me pongo a pensar en cómo empezó todo y todavía me parece increíble que una historia tan bonita naciera de algo tan simple. Tú llegaste un día al curso donde yo ya estaba. Era un día completamente normal, uno más de clases, de esos que uno cree que va a olvidar. Pero ese terminó siendo el día que cambió mi vida sin que yo lo supiera.
+Pero hoy no quiero borrar nada.
 
-De todos los asientos que había, te sentaste justo detrás de mí. No sé si alguna vez has pensado en eso, pero yo sí. Muchas veces. Porque había un montón de puestos y aun así terminaste sentándote exactamente ahí. Capaz para ti fue una decisión cualquiera, pero para mí terminó siendo el inicio de todo lo que hoy tenemos.
+Quiero escribirte exactamente lo que siento, aunque sé que probablemente ninguna frase va a ser suficiente para explicar todo lo que eres para mí.
 
-Ese mismo día nos dieron una hoja con una lección. Yo estaba viendo qué tocaba hacer cuando sentí que me tocaste la espalda. Me giré y me preguntaste qué había que hacer en esa hoja. Fue algo tan simple que cualquiera lo habría olvidado al día siguiente, pero yo no. Esa fue la primera vez que me hablaste, y nunca imaginé que esa pregunta iba a terminar convirtiéndose en la historia más bonita de mi vida.
+Nuestra historia merece quedarse en algún lugar, y quiero que ese lugar sean estas páginas.
 
-Después de eso empezamos a hablar cada vez más. Al principio era solo por cosas del colegio, por las tareas o por cualquier tontería. Poco a poco nos fuimos molestando, riéndonos por cosas que solo nosotros entendíamos y formando una amistad que, sin darnos cuenta, se volvió una parte muy importante de mis días. Había días en los que llegaba al colegio con ganas de que pasaran rápido las horas, pero bastaba con hablar un rato contigo para que todo cambiara. Me gustaba hacerte reír, me gustaba escucharte hablar y me gustaba que, sin importar el tema, siempre terminábamos conversando de algo.
+A veces me pongo a pensar en cómo empezó todo y todavía me parece increíble que algo tan bonito haya nacido de algo tan simple.
 
-Y si hago una pausa en todos esos recuerdos, creo que tengo que hablar de una etapa que nunca voy a olvidar: octubre, noviembre y diciembre del 2025. No sé en qué momento dejamos de ser solo dos amigos. No hubo un día exacto en el que dijera "ya me gusta". Simplemente pasó. Empezamos a decirnos lo que nos gustaba del otro. Yo siempre terminaba hablándote de tu sonrisa, porque de verdad me parecía la más bonita. Y tus ojos... nunca te dije todas las veces que me quedaba viéndolos cuando les daba la luz del sol. Se veían tan bonitos que a veces hasta me distraía. Me gustaba cualquier excusa para verte de cerca.
+Tú llegaste un día al curso donde yo ya estaba.
 
-También me encantaba cuando nos sentábamos en las escaleras del colegio. Creo que esos momentos fueron de mis favoritos. Nos salíamos de clases solo para estar juntos un rato más. Ahora seguramente diríamos que no era la mejor idea, pero si pudiera volver atrás, lo volvería a hacer. Porque esos minutos contigo valían muchísimo para mí. A veces ni hablábamos de cosas importantes, pero no hacía falta. Con estar contigo ya era suficiente.
+Era un día normal, uno más de clases, de esos días que uno piensa que van a pasar y que después simplemente se olvidan.
 
-Y cómo olvidarme del 19 de diciembre. Creo que esa fecha siempre me va a sacar una sonrisa. Todavía me río cuando pienso que te llevé a un salón vacío solo para besarte. No sé si tú lo recuerdas igual que yo, pero para mí fue uno de esos momentos que nunca voy a borrar de mi cabeza. Me sentía tan feliz que hasta casi nos dejamos llevar por el momento. Y justo cuando todo iba perfecto, apareció una chica de la nada. Nunca voy a olvidar tu cara de nervios. Querías esconderte y a mí me daba una mezcla de risa y ternura verte así. Después, cuando volvíamos a quedarnos solos, yo quería seguir besándote y tú otra vez te ponías nerviosita. Cada vez que me acuerdo de eso termino sonriendo como un tonto.
+Pero ese día terminó cambiando mi vida sin que yo lo supiera.
+
+De todos los asientos que había, terminaste sentándote justo detrás de mí.
+
+No sé si alguna vez has pensado en eso, pero yo sí.
+
+Porque había muchos lugares y aun así terminaste ahí.
+
+Tal vez para ti fue una decisión cualquiera, pero para mí terminó siendo el comienzo de todo lo que tenemos ahora.
+
+Ese mismo día nos dieron una hoja con una actividad.
+
+Yo estaba viendo qué había que hacer cuando sentí que me tocaste la espalda.
+
+Me giré y me preguntaste qué había que hacer en esa hoja.
+
+Fue algo tan sencillo que cualquiera lo habría olvidado.
+
+Pero yo no.
+
+Porque esa fue la primera vez que hablamos.
+
+Y nunca imaginé que una pregunta tan pequeña iba a terminar convirtiéndose en una de las historias más importantes de mi vida.
+
+Después de eso empezamos a hablar más.
+
+Primero eran cosas del colegio, tareas, preguntas o cualquier tontería.
+
+Pero poco a poco empezamos a molestarnos, reírnos por cosas que solo nosotros entendíamos y crear una confianza que cada día crecía más.
+
+Me gustaba hablar contigo.
+
+Me gustaba verte sonreír.
+
+Me gustaba que incluso un día aburrido se volviera diferente solamente porque estaba contigo.
+
+Y sin darme cuenta, empezaste a convertirte en alguien demasiado importante para mí.
+
 `
 
-`,
+,
+
 
 `
-Creo que una de las cosas que más me gusta de nosotros es que nunca necesitábamos hacer algo increíble para pasarla bien. Bastaba con estar juntos y ya. Da igual si era en el colegio, caminando por cualquier lugar o simplemente sentados hablando. Siempre terminábamos riéndonos por alguna tontería.
+Creo que una de las etapas que nunca voy a olvidar fueron esos meses de octubre, noviembre y diciembre del 2025.
 
-Y hablando de recuerdos ¿cómo no voy a hablar de nuestras salidas?
+No hubo un momento exacto donde dije "me enamoré".
 
-Todavía me acuerdo de nuestra primera "cita". La pongo entre comillas porque en ese momento ni siquiera éramos novios, pero para mí ya se sentía como una cita. Me acuerdo que tú fuiste con tu sobrina y yo fui con un amigo. Lo más chistoso es que los dos andábamos armados jajajaja. Ahora me acuerdo de eso y me da demasiada risa porque seguro cualquier persona que nos hubiera visto habría pensado que éramos bien raros.
+Simplemente pasó.
 
-También me acuerdo de tu sobrina. Pobrecita jajaja. Creo que estaba un poquito incómoda porque nosotros solo queríamos estar juntos y ella estaba ahí acompañándonos. Perdón por eso, pero en ese momento yo solo quería aprovechar cada minuto contigo.`,
+Poco a poco empecé a notar cosas de ti que me encantaban.
+
+Tu sonrisa siempre fue una de las cosas que más me gustaron.
+
+Pero también tus ojos.
+
+Esos ojitos café que cuando les daba la luz del sol se veían demasiado bonitos.
+
+Muchas veces me quedaba mirándolos y probablemente ni te dabas cuenta.
+
+También recuerdo cuando nos sentábamos en las escaleras del colegio.
+
+Esos momentos son de mis favoritos.
+
+A veces nos salíamos de clases solo para estar juntos un rato más.
+
+Tal vez no era la mejor decisión jajaja, pero si pudiera volver atrás, lo haría otra vez.
+
+Porque esos minutos contigo valían muchísimo.
+
+No necesitábamos hacer algo enorme.
+
+Solo estar juntos era suficiente.
+
+Y cómo olvidar el 19 de diciembre.
+
+Esa fecha siempre va a tener un lugar especial.
+
+Todavía me acuerdo de cuando te llevé a un salón vacío solo para besarte.
+
+Yo estaba demasiado feliz y nervioso al mismo tiempo.
+
+Todo parecía perfecto hasta que apareció una chica de la nada jajaja.
+
+Nunca voy a olvidar tu cara de nervios.
+
+Querías esconderte y a mí me daba mucha ternura verte así.
+
+Después cuando volvimos a estar solos yo solo quería seguir abrazándote y besándote.
+
+Ese día fue uno de esos recuerdos que sé que nunca voy a borrar.
 
 `
-Después nos fuimos a los barquitos de pedales. No sé si tú recuerdes exactamente de qué hablábamos mientras pedaleábamos, pero yo sí recuerdo cómo me sentía. Sentía una tranquilidad que nunca había sentido con nadie más. Era de esas veces en las que uno quisiera detener el tiempo para que el momento no se acabe nunca.
 
-Después comimos juntos y seguimos caminando hasta llegar a ese árbol.
+,
 
-No sabes cuánto significa ese árbol para mí.
 
-Capaz para otras personas solo sea un árbol cualquiera, pero para mí siempre va a ser el lugar donde dejamos nuestras iniciales. Me acuerdo cuando las estábamos haciendo y pensé: "Ojalá algún día volvamos aquí y podamos decir que todo valió la pena". Me gusta imaginar que esas iniciales van a seguir ahí durante mucho tiempo, incluso cuando nosotros ya estemos mucho más grandes.
+`
+Después llegaron nuestras salidas y cada una tiene algo especial.
 
-Y ojalá algún día volvamos a ese mismo lugar. Solo para reírnos de lo pequeños que éramos y recordar cómo empezó todo.
+Todavía recuerdo nuestra primera salida.
 
-Después vino otra salida que jamás voy a olvidar.
+Aunque en ese momento ni siquiera éramos novios, para mí ya se sentía diferente.
 
-El cine.
+Tú fuiste con tu sobrina y yo fui con un amigo.
 
-Todavía me río cada vez que pienso en eso. Reunimos la plata de la feria para poder ir y, al final, creo que fuimos las personas que menos atención le prestaron a la película. Duraba como una hora y nosotros pasamos casi cincuenta minutos besándonos. Si hoy alguien me preguntara de qué trataba esa película, la verdad no tendría ni idea. No me acuerdo de una sola escena. Lo único que recuerdo es estar sentado contigo, sentir que podía abrazarte y pensar que no quería estar en ningún otro lugar.
-Y, la verdad, no cambiaría ese recuerdo por nada.
+Y lo más gracioso es que los dos andábamos armados jajajaja.
 
-Después llegó nuestro primer picnic en el Parque Samanes.
+Ahora me acuerdo y me da demasiada risa.
 
-Ese día también ocupa un lugar muy especial en mi corazón. Me gustó porque fue algo sencillo, sin necesidad de hacer algo enorme para pasarla bien. Llevamos nuestras cosas, nos sentamos juntos y terminamos haciendo los cuadros con nuestras manos. Cada vez que veo esas manos pintadas me acuerdo de ese día y pienso en todo lo que todavía nos falta por vivir. Porque siento que apenas estamos empezando a llenar nuestra historia de recuerdos.
+También recuerdo cuando fuimos a los barquitos de pedales.
 
-Y me emociona saber que todavía nos quedan muchísimos más.
+No sé si recuerdas exactamente todo lo que hablamos ese día, pero yo sí recuerdo cómo me sentía.
 
-Todavía nos quedan más paseos, más fotos, más abrazos, más besos, más conversaciones hasta tarde, más lugares por conocer y más sueños por cumplir juntos.
+Sentía una tranquilidad que nunca había sentido con nadie más.
 
-Y después llegó el día que cambió todo.
+Era uno de esos momentos donde uno quisiera detener el tiempo.
 
-El 29 de enero del 2026.
+Después comimos juntos y caminamos hasta llegar a ese árbol.
 
-No creo que exista una fecha más importante para mí.
+Ese árbol para mí no es cualquier árbol.
 
-Todavía me acuerdo de lo tranquilo que estaba todo. No había nada extraordinario pasando, pero para mí ese momento terminó convirtiéndose en el mejor de mi vida.
+Para otras personas puede ser algo normal, pero para mí siempre va a representar algo.
 
-Lo que más me gusta recordar es que fuiste tú quien me preguntó primero si quería ser tu novio.
+Porque ahí dejamos nuestras iniciales.
 
-Todavía me río cuando pienso en eso porque me sentí todo un princeso jajajaja.
+Y me gusta pensar que algún día vamos a volver a ese lugar y vamos a recordar todo lo que vivimos.
 
-No me lo esperaba.
+Después vino el cine.
 
-Y creo que por eso fue todavía más especial.
+Todavía me río cuando pienso en eso.
 
-Después fui yo quien te preguntó si querías ser mi novia. Aunque ya sabía cuál iba a ser tu respuesta, igual estaba nervioso. No sé por qué. Supongo que porque era un momento que llevaba mucho tiempo esperando.
+Juntamos la plata de la feria para poder ir y al final creo que fuimos las personas que menos atención pusieron a la película jajaja.
 
-Cuando me dijiste que sí, sentí una felicidad que nunca había sentido antes.
+Duraba bastante tiempo y nosotros pasamos casi todo el rato juntos.
 
-Es muy difícil explicar con palabras cómo me sentí.
+La verdad no recuerdo casi nada de la película.
 
-Solo sé que, desde ese día, mi vida cambió para mejor.
+Pero sí recuerdo estar contigo.
 
-Y me encanta que todo ese momento haya quedado grabado. A veces vuelvo a ver ese video y me pongo a sonreír como un tonto. No porque sea un video perfecto, sino porque me recuerda el momento exacto en el que empezó oficialmente nuestra historia.
+Y eso es lo importante.
 
-Y ahora quiero decirte algo que probablemente nunca voy a saber explicar bien.
+Porque no importa el lugar.
 
-Te amo.
+Si estoy contigo, cualquier momento se vuelve especial.
 
-Te amo de una forma que nunca pensé que podía amar a alguien.
+`
 
-Antes de conocerte, yo pensaba que muchas cosas eran exageradas. Pensaba que las canciones de amor eran solo canciones, que las cartas eran demasiado cursis y que eso de pensar en una persona todo el tiempo solo pasaba en las películas.
+];
+// =========================
+// ELEMENTOS
+// =========================
 
-Hasta que llegaste tú.
+const cover = document.getElementById("cover");
+const main = document.getElementById("main");
+const background = document.getElementById("background");
 
-Y me di cuenta de que estaba completamente equivocado.
+const pages = document.querySelectorAll(".page");
 
-Ahora entiendo por qué existen tantas canciones de amor.
+let currentPage = 0;
 
-Ahora entiendo por qué la gente escribe cartas.
 
-Ahora entiendo por qué uno puede mirar a una persona y sentir paz.
+// =========================
+// MUSICA
+// =========================
 
-Porque eso es exactamente lo que me pasa contigo.
 
-No sé cómo explicarte todo lo que siento porque las palabras siempre se quedan cortas.
-
-Solo sé que cada día me enamoro un poquito más de ti.
-
-Sigo enamorándome de tu sonrisa.
-
-De esos ojitos café que tanto me gustan.
-
-De tu forma de abrazarme.
-
-De tu risa.
-
-De tu manera de hacer que incluso un día malo termine siendo bueno.
-
-Tus abrazos se convirtieron en el lugar donde siempre quiero estar.
-
-Y tus labios... no hay terapia mejor que un beso tuyo.
-
-Gracias por aparecer en mi vida.
-
-Gracias por elegirme.
-
-Gracias por hacerme sentir amado.
-
-Gracias por demostrarme que el amor bonito sí existe.
-
-Y si algún día vuelves a leer esta carta, quiero que recuerdes una sola cosa.
-
-Desde aquella pregunta sobre una hoja hasta el día en que me dijiste que sí, nunca dejé de sentir que estaba viviendo algo muy especial.
-
-Y hoy estoy seguro de que apenas estamos escribiendo las primeras páginas de todo lo que nos falta por vivir.
-
-Te prometo que siempre voy a hacer todo lo que esté a mi alcance para verte feliz.
-
-Te prometo mi lealtad.
-
-Mi confianza.
-
-Mi respeto.
-
-Te prometo que siempre voy a apoyarte cuando sientas que ya no puedes.
-
-Que voy a celebrar tus logros como si fueran míos.
-
-Que voy a seguir creyendo en nosotros incluso cuando las cosas se pongan difíciles.
-
-Te prometo crecer contigo, aprender contigo y construir un futuro a tu lado.
-
-No prometo que todo vaya a ser perfecto, porque ninguna relación lo es. Pero sí te prometo que siempre voy a elegir hablar antes que rendirme, abrazarte antes que alejarme y buscar una solución antes que dejar de luchar por nosotros.
-
-Porque, de todas las casualidades que pudieron pasar en mi vida, la más bonita fue que una niña nueva decidiera sentarse detrás de mí y me preguntara qué había que hacer en una hoja.
-
-Quién diría que una pregunta tan sencilla iba a terminar convirtiéndose en el amor más grande que he sentido.
-
-Y, si pudiera volver a vivir todo desde el principio, volvería a elegir exactamente el mismo asiento... solo para que tú volvieras a tocarme la espalda y preguntarme:
-
-"¿Qué tenemos que hacer aquí?"
-
-Porque ahora sé que la respuesta a esa pregunta era mucho más grande que una tarea.
-
-Era empezar a escribir la historia más bonita de mi vida.
-
-Te amo muchísimo, mi amor. Y gracias por ser tú. Siempre tú.`
+const playlist = [
+"teamop.mp3",
+"teamopfinal.mp3",
+"nadiemas.mp3",
+"teamopfinal2.mp3"
 ];
 
-let pages=document.querySelectorAll(".page");
-let cur=0;
 
-function escribir(el,text){
-  el.textContent="";
-  let i=0;
-  let it=setInterval(()=>{
-    el.textContent+=text.charAt(i);
-    i++;
-    if(i>=text.length) clearInterval(it);
-  },45);
+let song = 0;
+
+const music = document.getElementById("music");
+
+music.volume = 0.4;
+
+
+
+function playMusic(){
+
+if(!music.src){
+
+music.src = playlist[song];
+
 }
 
-escribir(document.getElementById("t1"),textos[0]);
+
+music.play().catch(()=>{});
+
+
+}
+
+
+
+music.addEventListener("ended",()=>{
+
+
+song++;
+
+
+if(song >= playlist.length){
+
+song = 0;
+
+}
+
+
+music.src = playlist[song];
+
+music.play().catch(()=>{});
+
+
+});
+
+
+
+// =========================
+// ESCRIBIR TEXTO
+// =========================
+
+
+function escribir(element,text){
+
+
+element.textContent="";
+
+
+let i=0;
+
+
+let intervalo=setInterval(()=>{
+
+
+element.textContent += text.charAt(i);
+
+
+i++;
+
+
+if(i>=text.length){
+
+clearInterval(intervalo);
+
+}
+
+
+},35);
+
+
+
+}
+
+
+
+// Primera página
+
+escribir(
+document.getElementById("t1"),
+textos[0]
+);
+
+
+
+
+// =========================
+// SIGUIENTE PAGINA
+// =========================
+
 
 function next(){
-  pages[cur].classList.remove("active");
-  cur++;
-  pages[cur].classList.add("active");
-  if(cur<4) escribir(document.getElementById("t"+(cur+1)),textos[cur]);
+
+
+
+pages[currentPage]
+.classList.remove("active");
+
+
+
+currentPage++;
+
+
+
+if(currentPage < pages.length){
+
+
+pages[currentPage]
+.classList.add("active");
+
+
+
+let texto =
+document.getElementById(
+"t"+(currentPage+1)
+);
+
+
+
+if(texto && textos[currentPage]){
+
+
+escribir(
+texto,
+textos[currentPage]
+);
+
+
 }
+
+
+
+}
+
+
+
+}
+
+
+
+// =========================
+// ABRIR CARTA
+// =========================
+
+
 
 function openLetter(){
-  document.querySelector(".envelope").classList.add("open");
-  playMusic();
-  setTimeout(()=>{
-    cover.style.display="none";
-    main.style.display="block";
-  },900);
+
+
+
+document
+.querySelector(".envelope")
+.classList.add("open");
+
+
+
+playMusic();
+
+
+
+setTimeout(()=>{
+
+
+cover.style.display="none";
+
+
+main.style.display="block";
+
+
+
+},1200);
+
+
+
 }
+
+
+
+// =========================
+// FINAL
+// =========================
+
 
 function showFinal(){
-  document.getElementById("finalMsg").style.display="block";
+
+
+
+document.getElementById("finalMsg")
+.style.display="block";
+
+
+
 }
 
-setInterval(()=>{
-  const h=document.createElement("div");
-  h.className="bg-heart";
-  h.innerHTML="❤️";
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(14+Math.random()*28)+"px";
-  h.style.animationDuration=(6+Math.random()*6)+"s";
-  background.appendChild(h);
-  setTimeout(()=>h.remove(),12000);
-},300);
-</script>
 
-</body>
-</html>
+
+
+// =========================
+// CORAZONES FLOTANDO
+// =========================
+
+
+setInterval(()=>{
+
+
+let heart=document.createElement("div");
+
+
+heart.className="bg-heart";
+
+
+heart.innerHTML="❤️";
+
+
+
+heart.style.left =
+Math.random()*100+"vw";
+
+
+
+heart.style.fontSize =
+(15 + Math.random()*30)+"px";
+
+
+
+heart.style.animationDuration =
+(5 + Math.random()*7)+"s";
+
+
+
+background.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+
+heart.remove();
+
+
+},12000);
+
+
+
+},300);
