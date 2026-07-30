@@ -1,1169 +1,525 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Para Niurka ❤️</title>
 
-<style>
-*{box-sizing:border-box}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-  margin:0;
-  height:100vh;
-  font-family:Georgia, serif;
-  overflow:hidden;
-  color:#fff;
-  background:linear-gradient(270deg,#6a0dad,#b983ff,#ffafcc,#ff5fa2);
-  background-size:600% 600%;
-  animation:bg 18s ease infinite;
-}
+    <title>❤️ 6 Meses Contigo ❤️</title>
 
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-/* INTRO */
-#intro{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  font-size:2rem;
-  padding:30px;
-  z-index:30;
-  animation:introOut 3s forwards;
-  animation-delay:4s;
-}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-@keyframes introOut{
-  to{opacity:0;pointer-events:none}
-}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-/* SOBRE */
-#cover{
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:20;
-}
+    <link rel="stylesheet" href="style.css">
 
-.envelope{
-  width:280px;
-  height:190px;
-  background:#ffd1dc;
-  border-radius:14px;
-  cursor:pointer;
-  box-shadow:0 20px 40px rgba(0,0,0,.3);
-  position:relative;
-  animation:pulse 2s infinite;
-}
-
-.envelope::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,transparent 50%,#ffb6c1 50%);
-  border-radius:14px;
-}
-
-.heart{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:48px;
-}
-
-@keyframes pulse{
-  50%{transform:scale(1.05)}
-}
-
-.open{
-  animation:open 1.2s forwards;
-}
-
-@keyframes open{
-  to{transform:scale(3);opacity:0}
-}
-
-/* CONTENIDO */
-#main{display:none;height:100vh}
-
-.background{
-  position:fixed;
-  inset:0;
-  z-index:0;
-}
-
-.bg-heart{
-  position:absolute;
-  animation:floatUp linear infinite;
-}
-
-@keyframes floatUp{
-  from{transform:translateY(110vh)}
-  to{transform:translateY(-10vh)}
-}
-
-.container{
-  position:relative;
-  z-index:1;
-  max-width:900px;
-  height:85vh;
-  margin:40px auto;
-  background:rgba(255,255,255,.15);
-  backdrop-filter:blur(12px);
-  border-radius:25px;
-  padding:40px;
-  overflow-y:auto;
-}
-
-.page{display:none}
-.page.active{display:block}
-
-h1{text-align:center;color:#ffd1dc}
-
-p{
-  font-size:1.2rem;
-  line-height:1.9;
-  white-space:pre-line;
-  min-height:300px;
-}
-
-.next-btn{
-  display:block;
-  margin:30px auto;
-  padding:14px 30px;
-  border:none;
-  border-radius:50px;
-  background:#ff5fa2;
-  color:white;
-  cursor:pointer;
-}
-
-/* FINAL */
-.final{text-align:center}
-.final h1{font-size:3.5rem}
-.big-heart{font-size:80px;animation:beat 1.2s infinite}
-@keyframes beat{50%{transform:scale(1.2)}}
-.arrow{font-size:60px;animation:arrow 2s infinite}
-@keyframes arrow{
-  0%{transform:translateX(-40px)}
-  50%{transform:translateX(40px)}
-  100%{transform:translateX(-40px)}
-}
-/*=====================================================
-
-        6 MESES CONTIGO ❤️
-        STYLE.CSS
-        PARTE 2A
-
-=====================================================*/
-
-
-/*=========================
-        GOOGLE FONTS
-=========================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
-
-
-/*=========================
-        VARIABLES
-=========================*/
-
-:root{
-
---pink:#ff4fa2;
---pink2:#ff78bc;
---pink3:#ffb7da;
-
---purple:#c87cff;
---purple2:#a855f7;
-
---white:#ffffff;
-
---dark:#221326;
-
---glass:rgba(255,255,255,.12);
-
---glassBorder:rgba(255,255,255,.25);
-
---shadow:
-
-0 20px 50px rgba(0,0,0,.18);
-
-}
-
-
-/*=========================
-      RESET
-=========================*/
-
-*{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-scroll-behavior:smooth;
-
-font-family:Poppins,sans-serif;
-
-}
-
-html{
-
-overflow-x:hidden;
-
-}
-
-body{
-
-background:linear-gradient(
--45deg,
-#ff90c8,
-#ffc5e7,
-#f8b8ff,
-#ff8ac0,
-#c688ff
-);
-
-background-size:500% 500%;
-
-animation:backgroundMove 18s ease infinite;
-
-color:white;
-
-overflow-x:hidden;
-
-min-height:100vh;
-
-position:relative;
-
-}
-
-
-/*=========================
-    FONDO ANIMADO
-=========================*/
-
-@keyframes backgroundMove{
-
-0%{
-
-background-position:0% 50%;
-
-}
-
-25%{
-
-background-position:50% 100%;
-
-}
-
-50%{
-
-background-position:100% 50%;
-
-}
-
-75%{
-
-background-position:50% 0%;
-
-}
-
-100%{
-
-background-position:0% 50%;
-
-}
-
-}
-
-
-/*=========================
-     SCROLL
-=========================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#ffe6f5;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:linear-gradient(
-
-#ff4fa2,
-
-#ff78bc,
-
-#c87cff
-
-);
-
-border-radius:20px;
-
-}
-
-
-/*=========================
-      LOADER
-=========================*/
-
-#loader{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#ffd4ec,
-
-#ffb5dc,
-
-#ff89c4
-
-);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:99999;
-
-transition:1s;
-
-}
-
-.loader-heart{
-
-font-size:90px;
-
-animation:
-
-heartBeat 1.2s infinite;
-
-filter:
-
-drop-shadow(0 0 20px #ff3d96);
-
-}
-
-
-@keyframes heartBeat{
-
-0%{
-
-transform:scale(1);
-
-}
-
-25%{
-
-transform:scale(1.12);
-
-}
-
-50%{
-
-transform:scale(.95);
-
-}
-
-75%{
-
-transform:scale(1.15);
-
-}
-
-100%{
-
-transform:scale(1);
-
-}
-
-}
-
-
-/*=========================
-     BIENVENIDA
-=========================*/
-
-#welcome{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:50px;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-
-/*=========================
- GLASS CARD
-=========================*/
-
-.glass{
-
-width:900px;
-
-max-width:95%;
-
-padding:60px;
-
-background:var(--glass);
-
-border:
-
-1px solid var(--glassBorder);
-
-backdrop-filter:blur(18px);
-
-border-radius:35px;
-
-box-shadow:var(--shadow);
-
-text-align:center;
-
-animation:
-
-fadeUp 1.5s ease;
-
-}
-
-
-/*=========================
- TITULOS
-=========================*/
-
-.glass h2{
-
-font-size:25px;
-
-font-weight:400;
-
-margin-bottom:15px;
-
-letter-spacing:2px;
-
-}
-
-.glass h1{
-
-font-size:90px;
-
-font-family:"Great Vibes",cursive;
-
-color:white;
-
-text-shadow:
-
-0 0 10px #fff,
-
-0 0 25px #ff67b5,
-
-0 0 40px #ff3f95;
-
-margin-bottom:25px;
-
-}
-
-.glass p{
-
-font-size:20px;
-
-line-height:1.8;
-
-opacity:.95;
-
-max-width:700px;
-
-margin:auto;
-
-}
-
-
-/*=========================
- BOTON
-=========================*/
-
-#startButton{
-
-margin-top:45px;
-
-padding:
-
-18px 55px;
-
-border:none;
-
-border-radius:50px;
-
-cursor:pointer;
-
-font-size:19px;
-
-font-weight:600;
-
-color:white;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-#ff4fa2,
-
-#ff7fc2,
-
-#c87cff,
-
-#ff4fa2
-
-);
-
-background-size:300%;
-
-animation:
-
-rgbButton 7s linear infinite;
-
-transition:.4s;
-
-box-shadow:
-
-0 15px 35px
-
-rgba(255,79,162,.35);
-
-}
-
-#startButton:hover{
-
-transform:
-
-translateY(-8px)
-
-scale(1.05);
-
-box-shadow:
-
-0 25px 50px
-
-rgba(255,79,162,.5);
-
-}
-
-
-@keyframes rgbButton{
-
-0%{
-
-background-position:0%;
-
-}
-
-100%{
-
-background-position:300%;
-
-}
-
-}
-
-
-/*=========================
-    FADE
-=========================*/
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:
-
-translateY(50px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:
-
-translateY(0);
-
-}
-
-}
-
-
-/*=========================
-      SOBRE
-=========================*/
-
-#envelopeSection{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
-padding:80px;
-
-}
-
-#envelope{
-
-position:relative;
-
-width:380px;
-
-height:260px;
-
-cursor:pointer;
-
-transition:.6s;
-
-}
-
-#envelope:hover{
-
-transform:
-
-translateY(-12px);
-
-}
-
-
-/*=========================
-    SOMBRA
-=========================*/
-
-.shadow{
-
-position:absolute;
-
-bottom:-20px;
-
-left:50%;
-
-transform:
-
-translateX(-50%);
-
-width:280px;
-
-height:25px;
-
-background:
-
-rgba(0,0,0,.18);
-
-filter:blur(18px);
-
-border-radius:50%;
-
-}
-
-
-/*=========================
-  BASE DEL SOBRE
-=========================*/
-
-.back{
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-
-145deg,
-
-#ff6ab5,
-
-#ff90ca
-
-);
-
-border-radius:15px;
-
-overflow:hidden;
-
-box-shadow:
-
-0 20px 40px
-
-rgba(0,0,0,.18);
-
-}
-
-
-/*=========================
- SOLAPA
-=========================*/
-
-.flap{
-
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:140px;
-
-background:
-
-linear-gradient(
-
-#ff87c7,
-
-#ff5ea9
-
-);
-
-clip-path:
-
-polygon(
-
-0 0,
-
-100% 0,
-
-50% 100%
-
-);
-
-transform-origin:top;
-
-transition:.9s;
-
-z-index:10;
-
-}
-
-
-/*=========================
- CARTA
-=========================*/
-
-.letter{
-
-position:absolute;
-
-left:20px;
-
-right:20px;
-
-bottom:20px;
-
-height:180px;
-
-background:white;
-
-border-radius:18px;
-
-padding:25px;
-
-color:#555;
-
-transition:1s;
-
-box-shadow:
-
-0 20px 40px
-
-rgba(0,0,0,.15);
-
-z-index:5;
-
-}
-
-.letter h3{
-
-font-family:"Great Vibes";
-
-font-size:42px;
-
-color:#ff4fa2;
-
-margin-bottom:10px;
-
-}
-
-.letter p{
-
-font-size:15px;
-
-line-height:1.8;
-
-}
-
-
-/*=========================
-   CLASES JS
-=========================*/
-
-#envelope.open .flap{
-
-transform:
-
-rotateX(180deg);
-
-}
-
-#envelope.open .letter{
-
-transform:
-
-translateY(-130px);
-
-}
-
-
-/*================================================
-
-      TERMINA LA PARTE 2A
-
-En la 2B haremos:
-
-❤️ Fondo con corazones vivos
-🌸 Pétalos cayendo
-✨ Destellos
-☁ Nubes
-🎀 Moños estilo Hello Kitty
-💌 Carta desplegable completa
-⏳ Contador premium
-📸 Galería Polaroid
-🎵 Reproductor elegante
-📱 Responsive
-
-================================================*/
-/* MUSICA */
-.music-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  padding:14px 22px;
-  border:none;
-  border-radius:50px;
-  background:#ff5fa2;
-  color:white;
-  cursor:pointer;
-  z-index:5;
-}
-</style>
 </head>
 
 <body>
 
-<div id="intro">
-  Esto lo hago de todo corazón para ti<br><br>
-  <strong>Te amo ❤️  (no te burles de mi musica ok?) </strong>
-</div>
+<!--==============================-->
+<!-- FONDO -->
+<!--==============================-->
 
-<div id="cover">
-  <div class="envelope" onclick="openLetter()">
-    <div class="heart">❤️</div>
-  </div>
-</div>
+<div class="background-gradient"></div>
 
-<div id="main">
-  <div class="background" id="background"></div>
+<div class="stars"></div>
 
-  <div class="container">
+<div class="hearts"></div>
 
-    <div class="page active">
-      <h1>Para ti ❤️</h1>
-      <p id="t1"></p>
-      <button class="next-btn" onclick="next()">Siguiente</button>
+<div class="petals"></div>
+
+<div class="sparkles"></div>
+
+<div class="clouds"></div>
+
+<div class="floating-bows"></div>
+
+<div class="cursor-heart"></div>
+
+<canvas id="particlesCanvas"></canvas>
+
+<!--==============================-->
+<!-- PANTALLA DE CARGA -->
+<!--==============================-->
+
+<section id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-heart">
+
+            ❤️
+
+        </div>
+
+        <h1>
+
+            Preparando una sorpresa...
+
+        </h1>
+
     </div>
 
-    <div class="page"><p id="t2"></p><button class="next-btn" onclick="next()">Siguiente</button></div>
-    <div class="page"><p id="t3"></p><button class="next-btn" onclick="next()">Siguiente</button></div>
-    <div class="page"><p id="t4"></p><button class="next-btn" onclick="next()">Siguiente</button></div>
+</section>
 
-    <div class="page final">
-      <h1>¿Quieres ser mi<br>San Valentín?</h1>
-      <div class="big-heart">❤️❤️❤️</div>
-      <div class="arrow">🏹❤️</div>
-      <button class="next-btn" onclick="showFinal()">Sí, acepto 💖</button>
-      <button class="next-btn" onclick="showFinal()">Sí, mi amor 💕</button>
-      <button class="next-btn" onclick="showFinal()">Sí, te amo ❤️</button>
-      <button class="next-btn" onclick="showFinal()">Sí 🌹</button>
+<!--==============================-->
+<!-- BIENVENIDA -->
+<!--==============================-->
 
-      <div id="finalMsg" style="display:none;margin-top:40px">
-        <h1>Sabía que dirías que sí ;D</h1>
-        <h1>TE AMO ❤️</h1>
-      </div>
-    </div>
+<section id="welcome">
 
-  </div>
+<div class="glass">
 
-  <audio id="music"></audio>
-  <button class="music-btn" onclick="playMusic()">🎵 Música</button>
+<h2>
+
+Para la niña que cambió mi vida
+
+</h2>
+
+<h1>
+
+6 Meses ❤️
+
+</h1>
+
+<p>
+
+Cada momento contigo merece ser recordado...
+
+</p>
+
+<button id="startButton">
+
+Abrir Nuestra Historia
+
+</button>
+
 </div>
 
-<script>
-const cover=document.getElementById("cover");
-const main=document.getElementById("main");
-const background=document.getElementById("background");
+</section>
 
-const playlist=[
-  "teamop.mp3",
-  "teamopfinal.mp3",
-  "nadiemas.mp3",
-  "teamopfinal2.mp3"
-];
+<!--==============================-->
+<!-- SOBRE -->
+<!--==============================-->
 
-let mi=0;
-const music=document.getElementById("music");
-music.volume=0.4;
+<section id="envelopeSection">
 
-function playMusic(){
-  if(!music.src) music.src=playlist[mi];
-  music.play();
-}
+<div class="title-box">
 
-music.addEventListener("ended",()=>{
-  mi=(mi+1)%playlist.length;
-  music.src=playlist[mi];
-  music.play();
-});
+<h2>
 
-/* ===== TEXTOS ===== */
-const textos=[
-`
-A veces me descubro recordando todo lo que hemos vivido y se me escapa una sonrisa. No porque todo haya sido perfecto, sino porque ha sido real. Porque contigo aprendí que el amor no siempre llega haciendo pq si, a veces llega de la nada y se queda.  sin exagerar has sido el mejor amor que he tenido en mi vida
+Antes de comenzar...
 
-Me gusta tu mirada. Hay algo en tus ojos que me enamora, algo que no sé explicar bien, pero que siempre quiero volver a ver.
+</h2>
 
-Me gusta todo de ti. Incluso eso que tú no ves bonito. Eso que llamas defectos, complejos, inseguridades. A mí me gustan porque hablan de quién eres, de lo que has vivido de lo fuerte que has tenido que ser. Yo no quiero cambiarte ni corregirte. Yo te amo tal como eres, sin quitarte nada y sin pedirte que seas otra.
+<p>
 
-Hay momentos en los que no hacemos nada especial, y aun así se sienten importantes. Caminar juntos, mirarnos en silencio, compartir el cansancio del día. Contigo entendí que el amor también vive ahí en lo simple, en lo que no necesita explicación.
+Tengo algo para ti 💌
 
-Después de un beso siempre quiero otro. No porque no sea suficiente, sino porque contigo nunca quiero detenerme. Cada beso tuyo tiene algo que me calma y algo que me enciende. Es como si el tiempo se quedara quieto solo para nosotros. Y cuando termina, ya estoy esperando el siguiente.
+</p>
 
-No necesito promesas grandes ni palabras bonitas todo el tiempo. Me basta con tu presencia y con tu forma de querer, con la manera en la que te quedas incluso cuando las cosas no son fáciles. Me basta con saber que eres tú.
+</div>
 
-Si algún día dudas de ti, quiero que recuerdes esto: yo te vi completa y aun así decidí quedarme. Te vi con miedos, con tus dudas, con heridas, y aun así te elegí. Porque en todo eso también hay belleza, y yo sí la veo.
+<div id="envelope">
 
-No sé qué traerá el futuro, pero sé lo que siento ahora. Y ahora te amo. Te amo porque no necesitas ser perfecta para ser suficiente
-`,
+<div class="shadow"></div>
 
-`
-Pueden haber millones de personas en este mundo, millones de rostros que pasan frente a mi cada día, pero todo cambió cuando te conocí . En un instante, ese mar de gente se redujo a una sola sonrisa, a un par de ojos que me invitaron a soñar como nunca antes . No fue algo que planeé ni que imaginé posible... simplemente sucedió, como si el universo hubiera decidido, en ese momento, que mis días ya no volverían a ser los mismos...
-Tus ojos...esos ojos que tienen una luz que no puedo describir, que tienen una forma de mirarme que hace que todo lo demás desaparezca . Nose si alguna vez te diste cuenta, pero cada vez que nuestras miradas se cruzan, el mundo de detiene, el ruido de apaga, y por un segundo, es como si solo existieramos tú y yo . Es en esos momentos en los que me doy cuenta de que no necesito más, que todo lo que busco está ahí, en esos ojos que me invitan a quedarme, a soñar con un “ nosotros ” que parece imposible pero que mi corazón no deja de anhelar.
-Eres tú...solo tú. Y por más que el mundo siga girando y la gente siga pasando, mi mirada siempre buscará la tuya, y mi corazón siempre latirá al ritmo de tu sonrisa. 
-      ´´antes de tocar tus labios quiero tocar tu corazón y antes de conquistar tu cuerpo quiero conquistar tu amor ♥´´
-    Sabes, aveces pienso que decirte teamo no basta, porque...
-                                          Un te amo
-No es suficiente para expresar todo el amor que tengo hacia ti,podría escribir miles de poemas y libros y aún asi no podría decirte ni la mitad de eso,te amo tanto,y no lo digo solo porque suene bonito cuando te digo que te amo me refiero a que te amo por encima de todo,te amo aunque hayan miles de problemas,te amor a pesar de que todavía somos muy jóvenes,te amo aunque el mundo se ponga en nuestra contra.🫶❤️💞🙈
-Quisiera darte el mundo entero,porque realmente te lo mereces,eres todo eso que siempre quise y nunca llegaba,no podré darte todo,pero si puedo darte lo mejor de mi,cada día me esfuerzo más para que te sientas aún mejor conmigo,te estoy entregado todo mi amor,para que te sientas en casa,te quiero dar todo eso que nadie te ha dado,y te quiero hacer sentir cosas nuevas,me siento tan agradecido de tenerte en mi vida,no me importa que diga la gente,yo ya gane con el hecho de que estés conmigo,porque es demasiado bonito compartir mi día a día contigo,es muy lindo imaginarme un futuro contigo,porque a pesar de que falte mucho tiempo,yo te quiero conmigo,por más que pasen los días y los años siempre serás tú,Sin importar la situación Yo estaré contigo porque te amo..`,
-`Eres tu la ilucion, que hace tiempo cumpli, mas tu sigues siendo en realidad todavia un sueño para mi..
-Si me preguntas cuántas veces viniste a mi mente, te diría una vez, porque llegaste y nunca te fuiste, y no es solo una forma de hablar, es que desde que apareciste algo cambió en mí, algo se quedó quieto y al mismo tiempo empezó a tener sentido, no te pienso como se piensa una idea, te pienso como se respira, sin darme cuenta, sin poder evitarlo, estás ahí, en lo simple, en lo de todos los días, en las canciones que suenan sin razón, en el silencio que se siente más tranquilo, en las palabras que me salen sin querer, no sé en qué momento dejaste de ser recuerdo y empezaste a ser parte de todo, hay personas que pasan, pero tú te quedaste como quien encuentra su lugar y decide no irse más, a veces me pregunto por qué y la verdad es que no encuentro explicación, quizás es porque contigo las cosas no se piensan, se sienten, no hubo promesas, ni planes, ni un principio exacto, solo llegaste y desde entonces mi mente y mi corazón encontraron algo que no sabían que buscaban, por eso si me preguntan cuántas veces viniste a mi mente seguiré diciendo una sola vez, porque llegaste una vez pero te quedaste en todas mis formas, en mis gestos, en mis días buenos y en los que no lo son, y tal vez ese sea el verdadero significado de amar, no contar las veces que alguien aparece en tu mente sino darse cuenta de que ya vive en uno, sin hacer ruido, sin avisar, pero quedándose para siempre 
-[Todo fue tan espontáneo, tan natural,que a ninguno de los dos nos pareció nada raro que, de pronto ,mi mano estuviera en su mano y que nos miraramos a los ojos como dos tontos]
-`,
+<div class="back"></div>
 
-`
-Lo siguiente que veras son escritas y creadas por mi a puño y letra, y todo esto pensando en ti, proque eres mi motivación e inspiración:
-Me gusta pensarte en años,
-no solo en momentos.
-Me gusta imaginarte
-cuando ya no seamos los mismos,
-cuando la vida nos marque un poco.
-Porque no te amo solo ahora,
-te amo en lo que vamos a ser.
-No me da miedo el tiempo contigo,
-me da ganas.
-Ganas de construir algo
-que no se rompa fácil 
-----
-No sé si soy el chico
-que imaginabas.
-No siempre tengo palabras,
-no siempre sé qué hacer.
-No me enamoré rápido,
-me enamoré profundo.
-Que es distinto.
-No fue un pq si,.
-fue Un pensar en ti sin razón,
-un querer contarte cosas pequeñas.
-Y cuando quise darme cuenta
-ya estabas en mis planes,
-en mis ganas de un futuro contigo niu
------
-Sabes que me gusta leer mucho poemas o poesias y pss me gusta mucho las de Mario Benedetti y Pablo Neruda. en una parte del libro de los sonetos de Pablito Neruda vi  el soneto 66 y me gustaria que lo leas y analizes, te amo mucho.
-No te quiero sino porque te quiero 
-y de quererte a no quererte llego 
-y de esperarte cuando no te espero 
-pasa mi corazón del frío al fuego. 
+<div class="letter">
 
-Te quiero sólo porque a ti te quiero, 
-te odio sin fin, y odiándote te ruego, 
-y la medida de mi amor viajero 
-es no verte y amarte como un ciego. 
+<div class="mini-heart">
 
-Tal vez consumirá la luz de Enero, 
-su rayo cruel, mi corazón entero, 
-robándome la llave del sosiego. 
+❤️
 
-En esta historia sólo yo me muero 
-y moriré de amor porque te quiero, 
-porque te quiero, amor, a sangre y fuego
-`,
+</div>
 
-`
-No sé bien cómo empezar esto, la verdad.
-Solo sé que cuando te conocí nunca pensé que tú me ibas a hablar.
-Ni de broma.
-Te veía y ya, me gustabas desde que llegaste, pero en mi cabeza tú estabas muy arriba y yo no tanto, así que ni me hacía ideas.
-Era como “me gusta, pero hasta ahí”.
+<h3>
 
-Después empezamos a hablar, normal, sin intención.
-Charlas cualquiera, bromas, molestarnos, reírnos por tonterías.
-Yo la pasaba bien contigo sin darme cuenta.
-Me sentía cómodo, como si no tuviera que pensar qué decir ni cómo actuar.
-Y así, sin buscarlo, nos hicimos amigos.
-Luego mejores amigos.
-Y eso me gustaba mucho.
+Mi Amor
 
-Pero hubo un momento en que ya no te veía igual.
-No fue de golpe, fue raro.
-Simplemente ya no sentía lo mismo cuando te veía.
-No era solo verte y ya.
-Sentía algo más, algo que no sabía explicar.
-Mi cabeza me decía que no, que mejor no, que no arruine lo que teníamos, que no me meta en problemas.
-Pero mi corazón era necio y decía que sí, que contigo valía la pena aunque salga mal.
+</h3>
 
-Empecé a acercarme más, a buscarte más, a intentar robarte besos.
-Y sí, te los robé.
-Con nervios, con miedo, pero con ganas.
-Te invité a salir sin estar seguro de nada, sin saber si dirías que sí.
-Y aun así lo hice.
-Y poco a poco se dio.
-Eso que parecía tan difícil, tan lejos, tan imposible.
+<p>
 
-Tú, con ese corazón tan sensible, tan frágil a veces, con una forma de querer tan distinta.
-Y yo aprendiendo sobre la marcha, aprendiendo a no apurarte, a cuidarte, a entenderte.
-Mirando atrás y pensando cómo pasamos de hablarnos por cualquier cosa a estar aquí.
+Haz clic nuevamente para abrir esta carta...
 
-De pensar que no estaba a tu nivel, a tenerte conmigo.
-De ser amigos, a ser algo más.
+</p>
 
-Y escribo esto porque quería decirlo así, sin Esquivos, al grano bby.
-Porque desde el inicio me gustaste aunque no lo dijera.
-Porque tuve miedo, dudé, pero igual me lancé.
-Y porque contigo, por primera vez, sentí que el corazón tenía más razón que la cabeza.
-`
-];
+</div>
 
-let pages=document.querySelectorAll(".page");
-let cur=0;
+<div class="front"></div>
 
-function escribir(el,text){
-  el.textContent="";
-  let i=0;
-  let it=setInterval(()=>{
-    el.textContent+=text.charAt(i);
-    i++;
-    if(i>=text.length) clearInterval(it);
-  },45);
-}
+<div class="flap"></div>
 
-escribir(document.getElementById("t1"),textos[0]);
+</div>
 
-function next(){
-  pages[cur].classList.remove("active");
-  cur++;
-  pages[cur].classList.add("active");
-  if(cur<4) escribir(document.getElementById("t"+(cur+1)),textos[cur]);
-}
+</section>
 
-function openLetter(){
-  document.querySelector(".envelope").classList.add("open");
-  playMusic();
-  setTimeout(()=>{
-    cover.style.display="none";
-    main.style.display="block";
-  },900);
-}
+<!--==============================-->
+<!-- CARTA -->
+<!--==============================-->
 
-function showFinal(){
-  document.getElementById("finalMsg").style.display="block";
-}
+<section id="letterSection">
 
-setInterval(()=>{
-  const h=document.createElement("div");
-  h.className="bg-heart";
-  h.innerHTML="❤️";
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(14+Math.random()*28)+"px";
-  h.style.animationDuration=(6+Math.random()*6)+"s";
-  background.appendChild(h);
-  setTimeout(()=>h.remove(),12000);
-},300);
-</script>
+<div class="letterPaper">
+
+<div class="paper-decoration">
+
+❤️ ❤️ ❤️
+
+</div>
+
+<h1>
+
+Para Ti...
+
+</h1>
+
+<div id="typewriter">
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- CONTADOR -->
+<!--==============================-->
+
+<section id="counterSection">
+
+<h2>
+
+Nuestro Tiempo Juntos
+
+</h2>
+
+<div class="counter-grid">
+
+<div class="counter-card">
+
+<h1 id="days">
+
+000
+
+</h1>
+
+<p>
+
+Días
+
+</p>
+
+</div>
+
+<div class="counter-card">
+
+<h1 id="hours">
+
+00
+
+</h1>
+
+<p>
+
+Horas
+
+</p>
+
+</div>
+
+<div class="counter-card">
+
+<h1 id="minutes">
+
+00
+
+</h1>
+
+<p>
+
+Minutos
+
+</p>
+
+</div>
+
+<div class="counter-card">
+
+<h1 id="seconds">
+
+00
+
+</h1>
+
+<p>
+
+Segundos
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- TIMELINE -->
+<!--==============================-->
+
+<section id="timeline">
+
+<h2>
+
+Nuestra Historia
+
+</h2>
+
+<div class="timeline-container">
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+Nos conocimos
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+Primer beso
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+Primer "Te Amo"
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="dot"></div>
+
+<div class="content">
+
+<h3>
+
+6 Meses
+
+</h3>
+
+<p>
+
+Texto...
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- GALERÍA -->
+<!--==============================-->
+
+<section id="gallery">
+
+<h2>
+
+Nuestros Recuerdos
+
+</h2>
+
+<div class="polaroids">
+
+<div class="photo">
+
+<img src="assets/fotos/foto1.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto2.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto3.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto4.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+<div class="photo">
+
+<img src="assets/fotos/foto5.jpg">
+
+<p>
+
+❤️
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================-->
+<!-- MÚSICA -->
+<!--==============================-->
+
+<section id="musicSection">
+
+<h2>
+
+Nuestra Canción
+
+</h2>
+
+<div class="music-player">
+
+<button id="playMusic">
+
+▶
+
+</button>
+
+<div class="music-disc"></div>
+
+</div>
+
+<audio id="music">
+
+<source src="assets/musica/cancion.mp3">
+
+</audio>
+
+</section>
+
+<!--==============================-->
+<!-- MENSAJE FINAL -->
+<!--==============================-->
+
+<section id="final">
+
+<div class="glass-final">
+
+<h1>
+
+Te Amo ❤️
+
+</h1>
+
+<p>
+
+Aquí escribiré el último mensaje para ti...
+
+</p>
+
+<button id="rainButton">
+
+Haz Clic ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<div id="heartRain"></div>
+
+<script src="script.js"></script>
 
 </body>
-</html>
 
+</html>
